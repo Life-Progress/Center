@@ -125,6 +125,11 @@
             transform: translateX(10px);
             opacity: 0.6;
         }
+
+        /* 針對描述文字限制寬度以達到特定的兩行換行效果 */
+        .description-limit {
+            max-width: 420px;
+        }
     </style>
 </head>
 <body data-lang="zh-hant">
@@ -457,7 +462,8 @@
                         </div>
                     </div>
                     <div class="space-y-6">
-                        <p class="text-xl leading-relaxed font-medium" data-i18n="fmt-1-desc">在心理安全的環境中，針對個人特質與需求提供交流空間，支持你探索核心價值並應對當前的挑戰。</p>
+                        <!-- 左側固定兩行 -->
+                        <p class="text-xl leading-relaxed font-medium description-limit" data-i18n="fmt-1-desc">在心理安全的環境中，針對個人特質與需求提供交流空間，支持你探索核心價值並應對當前的挑戰。</p>
                         <div class="h-px w-12 bg-slate-200 my-6"></div>
                         <p class="text-base text-slate-500 italic serif leading-relaxed" data-i18n="fmt-1-en">A psychologically safe space tailored to your unique traits and needs, supporting you in exploring your core values and navigating current challenges.</p>
                     </div>
@@ -471,7 +477,8 @@
                         </div>
                     </div>
                     <div class="space-y-6">
-                        <p class="text-xl leading-relaxed font-medium" data-i18n="fmt-2-desc">在安全的團體中，透過他人的經驗與集體創作，<br>學習共感與連結，<br>並在彼此支持下共同成長。</p>
+                        <!-- 右側調整為兩行排列，限制寬度讓文字在「連結，」後自然換行 -->
+                        <p class="text-xl leading-relaxed font-medium description-limit" data-i18n="fmt-2-desc">在安全的團體中，透過他人的經驗與集體創作，學習共感與連結，並在彼此支持下共同成長。</p>
                         <div class="h-px w-12 bg-slate-200 my-6"></div>
                         <p class="text-base text-slate-500 italic serif leading-relaxed" data-i18n="fmt-2-en">Learning empathy and connection through shared experiences and collective creation within a safe group dynamic, fostering growth through mutual support.</p>
                     </div>
@@ -582,7 +589,7 @@
                 'fmt-1-en': 'A psychologically safe space tailored to your unique traits and needs, supporting you in exploring your core values and navigating current challenges.',
                 'fmt-2-title': '成長團體與工作坊',
                 'fmt-2-tag': 'GROUP WORKSHOPS',
-                'fmt-2-desc': '在安全的團體中，透過他人的經驗與集體創作，<br>學習共感與連結，<br>並在彼此支持下共同成長。',
+                'fmt-2-desc': '在安全的團體中，透過他人的經驗與集體創作，學習共感與連結，並在彼此支持下共同成長。',
                 'fmt-2-en': 'Learning empathy and connection through shared experiences and collective creation within a safe group dynamic, fostering growth through mutual support.',
                 'coach-title': 'PEER SUPPORT & COACHING / 學生教練團隊',
                 'coach-intro': '我們的學生教練經過專業課程訓練，協助同儕在學術與生活中找到支撐力量。<br><span class="text-sm not-italic opacity-70 mt-2 block font-medium">Our student coaches are professionally trained to support peers through life and academic challenges.</span>',
@@ -644,7 +651,7 @@
                 'fmt-1-en': 'A psychologically safe space tailored to your unique traits and needs, supporting you in exploring your core values and navigating current challenges.',
                 'fmt-2-title': '成长团体与工作坊',
                 'fmt-2-tag': 'GROUP WORKSHOPS',
-                'fmt-2-desc': '在安全的团体中，通过他人的经验与集体创作，<br>学习共感與連結，<br>并在彼此支持下共同成长。',
+                'fmt-2-desc': '在安全的团体中，通过他人的经验与集体创作，学习共感與連結，并在彼此支持下共同成长。',
                 'fmt-2-en': 'Learning empathy and connection through shared experiences and collective creation within a safe group dynamic, fostering growth through mutual support.',
                 'coach-title': 'PEER SUPPORT & COACHING / 学生教练团队',
                 'coach-intro': '我们的学生教练经过专业课程训练，协助同僚在学术與生活中找到支撑力量。<br><span class="text-sm not-italic opacity-70 mt-2 block font-medium">Our student coaches are professionally trained to support peers through life and academic challenges.</span>',

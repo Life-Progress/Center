@@ -126,8 +126,11 @@
             opacity: 0.6;
         }
 
-        .description-limit {
-            max-width: 420px;
+        /* 調整描述文字寬度與對齊，確保兩側切齊 */
+        .description-block {
+            width: 100%;
+            text-align: justify;
+            word-break: break-all;
         }
     </style>
 </head>
@@ -264,7 +267,7 @@
                 </div>
                 <div class="mt-10 md:mt-0 max-w-sm text-right">
                     <p class="text-base text-slate-500 leading-relaxed italic" data-i18n="coach-intro">
-                        我們的學生教練經過專業課程訓練，協助同儕在學術與生活中找到支撐力量。<br>
+                        我們的學生教練經過專業課程訓練，協助同儕在學習與生活中找到支撐力量。<br>
                         <span class="text-sm not-italic opacity-70 mt-2 block font-medium">Our student coaches are professionally trained to support peers through life and academic challenges.</span>
                     </p>
                 </div>
@@ -454,32 +457,43 @@
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                <div class="format-item rounded-2xl group">
-                    <div class="flex items-start justify-between mb-12">
+                <!-- 01 個人教練陪伴 - 已調整為兩側齊平 -->
+                <div class="format-item rounded-2xl group flex flex-col items-start">
+                    <div class="w-full flex justify-between items-start mb-12">
                         <span class="serif text-5xl italic text-slate-200 group-hover:text-black transition-colors duration-500">01.</span>
                         <div class="text-right">
-                            <h3 class="text-3xl font-bold mb-2" data-i18n="fmt-1-title">一對一帶領</h3>
+                            <h3 class="text-3xl font-bold mb-2" data-i18n="fmt-1-title">個人教練陪伴</h3>
                             <p class="label-text text-sky-800" data-i18n="fmt-1-tag">INDIVIDUAL COACHING</p>
                         </div>
                     </div>
-                    <div class="space-y-6">
-                        <p class="text-xl leading-relaxed font-medium description-limit" data-i18n="fmt-1-desc">在心理安全的環境中，針對個人特質與需求提供交流空間，支持你探索核心價值並應對當前的挑戰。</p>
-                        <div class="h-px w-12 bg-slate-200 my-6"></div>
-                        <p class="text-base text-slate-500 italic serif leading-relaxed" data-i18n="fmt-1-en">A psychologically safe space tailored to your unique traits and needs, supporting you in exploring your core values and navigating current challenges.</p>
+                    <div class="space-y-6 w-full flex flex-col items-end">
+                        <div class="description-block">
+                            <p class="text-xl leading-relaxed font-medium" data-i18n="fmt-1-desc">在安全、信任的一對一環境中，依你的特質與需求，陪伴你探索核心價值與潛能，並增強自我掌控感與成長動力。</p>
+                        </div>
+                        <div class="h-px w-12 bg-slate-200 my-6 self-start"></div>
+                        <div class="description-block">
+                            <p class="text-base text-slate-500 italic serif leading-relaxed" data-i18n="fmt-1-en">In a safe and trusting one-on-one setting, receive coaching tailored to your traits and needs, supporting you in exploring your core values and potential, while empowering your personal growth and sense of agency.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="format-item rounded-2xl group">
-                    <div class="flex items-start justify-between mb-12">
+                
+                <!-- 02 成長團體與工作坊 - 已調整為兩側齊平 -->
+                <div class="format-item rounded-2xl group flex flex-col items-start">
+                    <div class="w-full flex justify-between items-start mb-12">
                         <span class="serif text-5xl italic text-slate-200 group-hover:text-black transition-colors duration-500">02.</span>
                         <div class="text-right">
                             <h3 class="text-3xl font-bold mb-2" data-i18n="fmt-2-title">成長團體與工作坊</h3>
-                            <p class="label-text text-sky-800" data-i18n="fmt-2-tag">GROUP WORKSHOPS</p>
+                            <p class="label-text text-sky-800" data-i18n="fmt-2-tag">GROWTH GROUPS & WORKSHOPS</p>
                         </div>
                     </div>
-                    <div class="space-y-6">
-                        <p class="text-xl leading-relaxed font-medium description-limit" data-i18n="fmt-2-desc">在安全的團體中，透過他人的經驗與集體創作，學習共感與連結，並在彼此支持下共同成長。</p>
-                        <div class="h-px w-12 bg-slate-200 my-6"></div>
-                        <p class="text-base text-slate-500 italic serif leading-relaxed" data-i18n="fmt-2-en">Learning empathy and connection through shared experiences and collective creation within a safe group dynamic, fostering growth through mutual support.</p>
+                    <div class="space-y-6 w-full flex flex-col items-end">
+                        <div class="description-block">
+                            <p class="text-xl leading-relaxed font-medium" data-i18n="fmt-2-desc">在安全、支持的團體環境中，透過分享經驗與集體創作，學習共感與連結，在彼此鼓勵下共同探索核心價值與潛能。</p>
+                        </div>
+                        <div class="h-px w-12 bg-slate-200 my-6 self-start"></div>
+                        <div class="description-block">
+                            <p class="text-base text-slate-500 italic serif leading-relaxed" data-i18n="fmt-2-en">Within a safe and supportive group setting, learn empathy and connection through shared experiences and collective creation, growing together while exploring your core values and potential.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -563,16 +577,16 @@
                 'ser-e2': '創造力探索與生命敘事',
                 'fmt-subtitle': '輔導模式 / COACHING MODALITIES',
                 'fmt-intro': '針對不同的需求與目標，提供量身定制的支持管道。',
-                'fmt-1-title': '一對一帶領',
+                'fmt-1-title': '個人教練陪伴',
                 'fmt-1-tag': 'INDIVIDUAL COACHING',
-                'fmt-1-desc': '在心理安全的環境中，針對個人特質與需求提供交流空間，支持你探索核心價值並應對當前的挑戰。',
-                'fmt-1-en': 'A psychologically safe space tailored to your unique traits and needs, supporting you in exploring your core values and navigating current challenges.',
+                'fmt-1-desc': '在安全、信任的一對一環境中，依你的特質與需求，陪伴你探索核心價值與潛能，並增強自我掌控感與成長動力。',
+                'fmt-1-en': 'In a safe and trusting one-on-one setting, receive coaching tailored to your traits and needs, supporting you in exploring your core values and potential, while empowering your personal growth and sense of agency.',
                 'fmt-2-title': '成長團體與工作坊',
-                'fmt-2-tag': 'GROUP WORKSHOPS',
-                'fmt-2-desc': '在安全的團體中，透過他人的經驗與集體創作，學習共感與連結，並在彼此支持下共同成長。',
-                'fmt-2-en': 'Learning empathy and connection through shared experiences and collective creation within a safe group dynamic, fostering growth through mutual support.',
+                'fmt-2-tag': 'GROWTH GROUPS & WORKSHOPS',
+                'fmt-2-desc': '在安全、支持的團體環境中，透過分享經驗與集體創作，學習共感與連結，在彼此鼓勵下共同探索核心價值與潛能。',
+                'fmt-2-en': 'Within a safe and supportive group setting, learn empathy and connection through shared experiences and collective creation, growing together while exploring your core values and potential.',
                 'coach-title': 'PEER SUPPORT & COACHING / 學生教練團隊',
-                'coach-intro': '我們的學生教練經過專業課程訓練，協助同儕在學術與生活中找到支撐力量。<br><span class="text-sm not-italic opacity-70 mt-2 block font-medium">Our student coaches are professionally trained to support peers through life and academic challenges.</span>',
+                'coach-intro': '我們的學生教練經過專業課程訓練，協助同儕在學習與生活中找到支撐力量。<br><span class="text-sm not-italic opacity-70 mt-2 block font-medium">Our student coaches are professionally trained to support peers through life and academic challenges.</span>',
                 'coach1-name': '陳同學 / Chen, Xiao-Ming',
                 'coach1-edu1': '/ 相關修課背景：正向心理學、創造力',
                 'coach1-edu2': '/ 正向心理學與創造力專題實務訓練',
@@ -635,16 +649,16 @@
                 'ser-e2': '创造力探索與生命叙事',
                 'fmt-subtitle': '辅导模式 / COACHING MODALITIES',
                 'fmt-intro': '针对不同的需求與目标，提供量身定制的支持管道。',
-                'fmt-1-title': '一对一带领',
+                'fmt-1-title': '个人教练陪伴',
                 'fmt-1-tag': 'INDIVIDUAL COACHING',
-                'fmt-1-desc': '在心理安全的环境中，针对个人特质與需求提供交流空间，支持你探索核心价值並應對當前的挑戰。',
-                'fmt-1-en': 'A psychologically safe space tailored to your unique traits and needs, supporting you in exploring your core values and navigating current challenges.',
-                'fmt-2-title': '成长团体與工作坊',
-                'fmt-2-tag': 'GROUP WORKSHOPS',
-                'fmt-2-desc': '在安全的团体中，通過他人的經驗與集體創作，學習共感與連結，並在彼此支持下共同成長。',
-                'fmt-2-en': 'Learning empathy and connection through shared experiences and collective creation within a safe group dynamic, fostering growth through mutual support.',
-                'coach-title': 'PEER SUPPORT & COACHING / 学生教练团队',
-                'coach-intro': '我们的学生教练经过专业课程训练，协助同侪在学术與生活中找到支撑力量。<br><span class="text-sm not-italic opacity-70 mt-2 block font-medium">Our student coaches are professionally trained to support peers through life and academic challenges.</span>',
+                'fmt-1-desc': '在安全、信任的一对一环境中，依你的特质与需求，陪伴你探索核心价值与潜能，並增強自我掌控感與成长動力。',
+                'fmt-1-en': 'In a safe and trusting one-on-one setting, receive coaching tailored to your traits and needs, supporting you in exploring your core values and potential, while empowering your personal growth and sense of agency.',
+                'fmt-2-title': '成长团体与工作坊',
+                'fmt-2-tag': 'GROWTH GROUPS & WORKSHOPS',
+                'fmt-2-desc': '在安全、支持的团体环境中，透过分享经验与集体创作，学习共感与連結，在彼此鼓励下共同探索核心价值与潜能。',
+                'fmt-2-en': 'Within a safe and supportive group setting, learn empathy and connection through shared experiences and collective creation, growing together while exploring your core values and potential.',
+                'coach-title': 'PEER SUPPORT & COACHING / 學生教練團隊',
+                'coach-intro': '我们的学生教练经过专业课程训练，协助同儕在学习與生活中找到支撑力量。<br><span class="text-sm not-italic opacity-70 mt-2 block font-medium">Our student coaches are professionally trained to support peers through life and academic challenges.</span>',
                 'coach1-name': '陈同学 / Chen, Xiao-Ming',
                 'coach1-edu1': '/ 相关修课背景：正向心理学、创造力',
                 'coach1-edu2': '/ 正向心理学與创造力专题实务训练',

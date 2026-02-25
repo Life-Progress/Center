@@ -8,165 +8,47 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg: #ffffff;
-            --text: #1a1a1a;
-            --subtext: #4b5563;
-            --border: #e5e7eb;
-        }
-
-        body {
-            font-family: 'Noto Sans SC', 'Noto Sans TC', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            scroll-behavior: smooth;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        section {
-            scroll-margin-top: 100px;
-        }
-
-        .serif {
-            font-family: 'Playfair Display', serif;
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .nav-blur {
-            backdrop-filter: blur(12px);
-            background-color: rgba(255, 255, 255, 0.9);
-        }
-
-        .service-item {
-            border-bottom: 1px solid var(--border);
-            padding: 3.5rem 0;
-            transition: all 0.4s ease;
-        }
-
-        .service-item:hover {
-            padding-left: 1.5rem;
-            border-bottom-color: var(--text);
-        }
-
-        .hero-text {
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-        }
-
-        .lang-switch {
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s;
-            padding: 6px 10px;
-        }
+        :root { --bg: #ffffff; --text: #1a1a1a; --subtext: #4b5563; --border: #e5e7eb; }
+        body { font-family: 'Noto Sans SC', 'Noto Sans TC', sans-serif; background-color: var(--bg); color: var(--text); scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+        section { scroll-margin-top: 100px; }
+        .serif { font-family: 'Playfair Display', serif; }
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .nav-blur { backdrop-filter: blur(12px); background-color: rgba(255, 255, 255, 0.9); }
+        .service-item { border-bottom: 1px solid var(--border); padding: 3.5rem 0; transition: all 0.4s ease; }
+        .service-item:hover { padding-left: 1.5rem; border-bottom-color: var(--text); }
+        .hero-text { line-height: 1.1; letter-spacing: -0.02em; }
+        .lang-switch { font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; cursor: pointer; transition: all 0.3s; padding: 6px 10px; }
         .lang-switch:hover { opacity: 0.5; }
         .lang-active { border-bottom: 2px solid black; }
-
-        .for-whom-card {
-            border-left: 1px solid #f1f1f1;
-            padding-left: 2rem;
-            transition: all 0.5s ease;
-        }
-        .for-whom-card:hover {
-            border-left-color: #000;
-        }
-
-        .coach-card {
-            border: 1px solid #f1f1f1;
-            padding: 2.5rem;
-            transition: all 0.5s ease;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            background: #fff;
-        }
-        .coach-card:hover {
-            border-color: #000;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-
-        .format-item {
-            border: 1px solid #f1f1f1;
-            padding: 3rem;
-            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-        .format-item:hover {
-            border-color: #000;
-            background: #fafafa;
-        }
-
-        .label-text {
-            font-size: 13px;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            font-weight: 700;
-            color: #4b5563;
-        }
-
-        .cta-button {
-            display: inline-block;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-        }
-        .cta-button:hover {
-            transform: translateX(10px);
-            opacity: 0.6;
-        }
-
-        .description-block {
-            width: 100%;
-            word-break: keep-all;
-            overflow-wrap: break-word;
-            hyphens: none;
-        }
-        
-        .desc-zh {
-            text-align: left;
-            letter-spacing: -0.01em; 
-            line-height: 1.6;
-        }
-
-        .desc-en {
-            text-align: left;
-            line-height: 1.5;
-            letter-spacing: normal;
-        }
-
-        #mobile-menu {
-            display: none;
-        }
-        #mobile-menu.active {
-            display: block;
-        }
+        .for-whom-card { border-left: 1px solid #f1f1f1; padding-left: 2rem; transition: all 0.5s ease; }
+        .for-whom-card:hover { border-left-color: #000; }
+        .coach-card { border: 1px solid #f1f1f1; padding: 2.5rem; transition: all 0.5s ease; height: 100%; display: flex; flex-direction: column; background: #fff; }
+        .coach-card:hover { border-color: #000; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .format-item { border: 1px solid #f1f1f1; padding: 3rem; transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1); }
+        .format-item:hover { border-color: #000; background: #fafafa; }
+        .label-text { font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 700; color: #4b5563; }
+        .cta-button { display: inline-block; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); position: relative; }
+        .cta-button:hover { transform: translateX(10px); opacity: 0.6; }
+        .description-block { width: 100%; word-break: keep-all; overflow-wrap: break-word; hyphens: none; }
+        .desc-zh { text-align: left; letter-spacing: -0.01em; line-height: 1.6; }
+        .desc-en { text-align: left; line-height: 1.5; letter-spacing: normal; }
+        #mobile-menu { display: none; }
+        #mobile-menu.active { display: block; }
     </style>
 </head>
 <body data-lang="zh-hans">
 
-    <!-- 導航欄 -->
+    <!-- 導航欄（Our Stance 已移到最前面） -->
     <nav id="main-nav" class="fixed w-full z-50 py-6 px-10 flex justify-between items-center nav-blur border-b border-slate-50">
         <div class="flex flex-col">
             <span class="serif font-bold text-2xl tracking-tighter">Life Progress Center</span>
             <span class="label-text mt-1 text-slate-500" data-i18n="nav-subtitle">生命進程中心</span>
         </div>
-        
-        <!-- 桌面選單 -->
         <div class="hidden md:flex items-center space-x-8 md:space-x-12">
             <div class="flex space-x-12 text-[12px] uppercase tracking-[0.2em] font-bold">
-                <a href="#about" class="nav-link hover:opacity-40 transition" data-i18n="nav-bg">Who We Are</a>
                 <a href="#philosophy" class="nav-link hover:opacity-40 transition" data-i18n="nav-philosophy">Our Stance</a>
+                <a href="#about" class="nav-link hover:opacity-40 transition" data-i18n="nav-bg">Who We Are</a>
                 <a href="#whom" class="nav-link hover:opacity-40 transition" data-i18n="nav-whom">Who We Serve</a>
                 <a href="#services" class="nav-link hover:opacity-40 transition" data-i18n="nav-services">What We Offer</a>
                 <a href="#formats" class="nav-link hover:opacity-40 transition" data-i18n="nav-formats">How We Support</a>
@@ -177,18 +59,14 @@
                 <button onclick="switchLang('zh-hans')" id="btn-hans" class="lang-switch lang-active">简 / EN</button>
             </div>
         </div>
-
-        <!-- 手機漢堡 -->
-        <button id="mobile-menu-btn" class="md:hidden text-3xl text-slate-700">
-            <i class="fas fa-bars"></i>
-        </button>
+        <button id="mobile-menu-btn" class="md:hidden text-3xl text-slate-700"><i class="fas fa-bars"></i></button>
     </nav>
 
-    <!-- 手機選單 -->
+    <!-- 手機選單（順序同步調整） -->
     <div id="mobile-menu" class="fixed top-[88px] left-0 w-full bg-white border-b border-slate-100 shadow-lg z-40 md:hidden">
         <div class="flex flex-col text-[15px] font-medium py-6 px-10 space-y-6">
-            <a href="#about" class="nav-link mobile-link" data-i18n="nav-bg">Who We Are</a>
             <a href="#philosophy" class="nav-link mobile-link" data-i18n="nav-philosophy">Our Stance</a>
+            <a href="#about" class="nav-link mobile-link" data-i18n="nav-bg">Who We Are</a>
             <a href="#whom" class="nav-link mobile-link" data-i18n="nav-whom">Who We Serve</a>
             <a href="#services" class="nav-link mobile-link" data-i18n="nav-services">What We Offer</a>
             <a href="#formats" class="nav-link mobile-link" data-i18n="nav-formats">How We Support</a>
@@ -196,40 +74,52 @@
         </div>
     </div>
 
-    <!-- 首頁區塊 (Hero) -->
+    <!-- Hero -->
     <section id="hero" class="min-h-screen flex flex-col justify-center px-10 md:px-24 pt-20">
         <div class="max-w-7xl reveal">
             <h1 class="hero-text serif text-[12vw] md:text-[9vw] font-bold mb-16">
                 Making Progress<br>
                 <span class="italic text-slate-400">In the Midst of Life</span>
             </h1>
-            
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20">
                 <div class="space-y-4">
-                    <p class="text-2xl md:text-3xl leading-relaxed font-medium" data-i18n="hero-slogan-zh">
-                        在迷惘中找到方向<br>
-                        在困境中重建力量<br>
-                        陪你走向更有意義的人生
-                    </p>
+                    <p class="text-2xl md:text-3xl leading-relaxed font-medium" data-i18n="hero-slogan-zh">在迷惘中找到方向<br>在困境中重建力量<br>陪你走向更有意義的人生</p>
                 </div>
                 <div class="flex items-center">
-                    <p class="serif italic text-slate-400 text-xl md:text-2xl leading-relaxed" data-i18n="hero-slogan-en">
-                        Finding direction in uncertainty.<br>
-                        Rebuilding strength in challenge.<br>
-                        Accompanying your journey toward a meaningful life.
-                    </p>
+                    <p class="serif italic text-slate-400 text-xl md:text-2xl leading-relaxed" data-i18n="hero-slogan-en">Finding direction in uncertainty.<br>Rebuilding strength in challenge.<br>Accompanying your journey toward a meaningful life.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 團隊背景 (Who We Are) -->
+    <!-- Our Stance (中英雙語) -->
+    <section id="philosophy" class="py-40 px-10 md:px-24">
+        <div class="max-w-4xl mx-auto text-center reveal">
+            <h2 class="serif text-6xl md:text-7xl mb-16" data-i18n="philosophy-title">Our Stance</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="description-block desc-zh space-y-8 mb-12">
+                    <p class="text-xl font-light leading-relaxed text-slate-700" data-i18n="philosophy-p1">我們不承諾「一定成功」、「永遠幸福」或「保證突破」。</p>
+                    <p class="text-xl font-light leading-relaxed text-slate-700" data-i18n="philosophy-p2">我們相信生命的發展是方向性的，而非保證的結果；</p>
+                    <p class="text-xl font-light leading-relaxed text-slate-700" data-i18n="philosophy-p3">逆境與不確定不是要被消除的暫時障礙，而是成長結構的一部分。</p>
+                    <p class="text-xl font-light leading-relaxed text-slate-700" data-i18n="philosophy-p4">我們的角色是陪伴你在現實的約束中，持續校準、恢復、更新，<br>一步一步朝向更成熟、更具意義的生命歷程。</p>
+                </div>
+                <div class="h-px w-12 bg-slate-200 mx-auto mb-12"></div>
+                <div class="description-block desc-en space-y-8">
+                    <p class="text-base italic serif text-slate-500 leading-relaxed" data-i18n="philosophy-p1-en">We do not promise “certain success,” “perpetual happiness,” or “guaranteed breakthroughs.”</p>
+                    <p class="text-base italic serif text-slate-500 leading-relaxed" data-i18n="philosophy-p2-en">We believe that development is directional, not a guaranteed outcome;</p>
+                    <p class="text-base italic serif text-slate-500 leading-relaxed" data-i18n="philosophy-p3-en">Adversity and uncertainty are not temporary obstacles to be eliminated, but integral parts of the structure of growth.</p>
+                    <p class="text-base italic serif text-slate-500 leading-relaxed" data-i18n="philosophy-p4-en">Our role is to accompany you within the constraints of reality, continuously calibrating, recovering, and renewing,<br>step by step toward a more mature and meaningful life journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who We Are -->
     <section id="about" class="py-40 px-10 md:px-24 bg-[#fafafa]">
         <div class="max-w-6xl mx-auto">
             <div class="mb-24 reveal">
                 <h2 class="serif text-6xl md:text-8xl mb-10">Who We Are</h2>
                 <div class="h-0.5 w-32 bg-black mb-16"></div>
-                
                 <div class="mt-20">
                     <p class="text-3xl md:text-4xl font-medium mb-4" data-i18n="hero-name">焦恩臨 教授 / Professor Chiao, En-Ling</p>
                     <div class="label-text text-lg leading-loose text-slate-600">
@@ -238,7 +128,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-32">
                 <div class="reveal">
                     <span class="serif text-slate-200 text-7xl md:text-8xl italic block mb-10">Education</span>
@@ -267,28 +156,18 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="reveal">
                     <span class="serif text-slate-200 text-7xl md:text-8xl italic block mb-10">Mentors</span>
                     <p class="label-text mb-12" data-i18n="mentor-subtitle">MENTORED BY / 師承</p>
                     <div class="space-y-12">
                         <div class="pt-8 border-t border-slate-200">
-                            <p class="text-base italic leading-relaxed text-slate-800">
-                                <strong class="text-xl not-italic serif font-bold">Dr. Mihaly Csikszentmihalyi</strong><br>
-                                <span class="text-[13px] text-slate-500 uppercase tracking-widest block mt-2 font-bold" data-i18n="mentor1">Co-founder of Positive Psychology & Father of Flow</span>
-                            </p>
+                            <p class="text-base italic leading-relaxed text-slate-800"><strong class="text-xl not-italic serif font-bold">Dr. Mihaly Csikszentmihalyi</strong><br><span class="text-[13px] text-slate-500 uppercase tracking-widest block mt-2 font-bold" data-i18n="mentor1">Co-founder of Positive Psychology & Father of Flow</span></p>
                         </div>
                         <div class="pt-8 border-t border-slate-200">
-                            <p class="text-base italic leading-relaxed text-slate-800">
-                                <strong class="text-xl not-italic serif font-bold">Dr. Jeanne Nakamura</strong><br>
-                                <span class="text-[13px] text-slate-500 uppercase tracking-widest block mt-2 font-bold" data-i18n="mentor2">Director, Quality of Life Research Center</span>
-                            </p>
+                            <p class="text-base italic leading-relaxed text-slate-800"><strong class="text-xl not-italic serif font-bold">Dr. Jeanne Nakamura</strong><br><span class="text-[13px] text-slate-500 uppercase tracking-widest block mt-2 font-bold" data-i18n="mentor2">Director, Quality of Life Research Center</span></p>
                         </div>
                         <div class="pt-8 border-t border-slate-200">
-                            <p class="text-base italic leading-relaxed text-slate-800">
-                                <strong class="text-xl not-italic serif font-bold">Dr. Bonnie Cramond</strong><br>
-                                <span class="text-[13px] text-slate-500 uppercase tracking-widest block mt-2 font-bold" data-i18n="mentor3">Director, Torrance Center for Creative Studies and Talent Development</span>
-                            </p>
+                            <p class="text-base italic leading-relaxed text-slate-800"><strong class="text-xl not-italic serif font-bold">Dr. Bonnie Cramond</strong><br><span class="text-[13px] text-slate-500 uppercase tracking-widest block mt-2 font-bold" data-i18n="mentor3">Director, Torrance Center for Creative Studies and Talent Development</span></p>
                         </div>
                     </div>
                 </div>
@@ -296,21 +175,7 @@
         </div>
     </section>
 
-    <!-- 我們的立場（新區塊） -->
-    <section id="philosophy" class="py-40 px-10 md:px-24">
-        <div class="max-w-4xl mx-auto text-center reveal">
-            <h2 class="serif text-6xl md:text-7xl mb-16" data-i18n="philosophy-title">Our Stance</h2>
-            <div class="space-y-12 text-xl font-light leading-relaxed text-slate-700">
-                <p data-i18n="philosophy-p1">我們不承諾「一定成功」、「永遠幸福」或「保證突破」。</p>
-                <p data-i18n="philosophy-p2">我們相信生命的發展是<strong>方向性的</strong>，而非保證的結果；</p>
-                <p data-i18n="philosophy-p3">苦難與不確定不是要被消除的暫時障礙，而是成長結構的一部分。</p>
-                <p data-i18n="philosophy-p4">我們的角色是陪伴你在現實的約束中，持續校準、恢復、更新，<br>一步一步朝向更成熟、更具意義的生命歷程。</p>
-                <p class="italic text-slate-400 text-lg" data-i18n="philosophy-tag">— Developmental Sobriety • 發展的清醒 —</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 學生教練區塊 -->
+    <!-- Student Coaches -->
     <section id="coaches" class="py-40 px-10 md:px-24">
         <div class="max-w-6xl mx-auto reveal">
             <div class="flex flex-col md:flex-row justify-between items-end mb-20 border-b border-slate-200 pb-10">
@@ -319,15 +184,10 @@
                     <p class="label-text" data-i18n="coach-title">PEER SUPPORT & COACHING / 學生教練團隊</p>
                 </div>
                 <div class="mt-10 md:mt-0 max-w-sm text-right">
-                    <p class="text-base text-slate-500 leading-relaxed italic" data-i18n="coach-intro">
-                        我們的學生教練經過專業課程訓練，協助同儕在學習與生活中找到支撐力量。<br>
-                        <span class="text-sm not-italic opacity-70 mt-2 block font-medium">Our student coaches are professionally trained to support peers through life and academic challenges.</span>
-                    </p>
+                    <p class="text-base text-slate-500 leading-relaxed italic" data-i18n="coach-intro">我們的學生教練經過專業課程訓練，協助同儕在學習與生活中找到支撐力量。<br><span class="text-sm not-italic opacity-70 mt-2 block font-medium">Our student coaches are professionally trained to support peers through life and academic challenges.</span></p>
                 </div>
             </div>
-            
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                <!-- 教練1 -->
                 <div class="coach-card group shadow-sm rounded-xl">
                     <div class="flex justify-between items-start mb-10">
                         <div>
@@ -340,14 +200,8 @@
                         <div>
                             <h4 class="label-text mb-6 border-l-4 border-slate-200 pl-4" data-i18n="coach-bg-label">BACKGROUND & TRAINING / 專業背景與訓練</h4>
                             <ul class="text-base space-y-6 text-slate-700 leading-relaxed">
-                                <li class="flex flex-col">
-                                    <div class="font-medium" data-i18n="coach1-edu1">/ 相關修課背景：正向心理學、創造力</div>
-                                    <div class="text-sm text-slate-500 italic font-bold">Relevant Coursework: Positive Psychology, Creativity</div>
-                                </li>
-                                <li class="flex flex-col">
-                                    <div class="font-medium" data-i18n="coach1-edu2">/ 正向心理學與創造力專題實務訓練</div>
-                                    <div class="text-sm text-slate-500 italic font-bold">Project-Based Experiential Practicum in Positive Psychology and Creativity</div>
-                                </li>
+                                <li class="flex flex-col"><div class="font-medium" data-i18n="coach1-edu1">/ 相關修課背景：正向心理學、創造力</div><div class="text-sm text-slate-500 italic font-bold">Relevant Coursework: Positive Psychology, Creativity</div></li>
+                                <li class="flex flex-col"><div class="font-medium" data-i18n="coach1-edu2">/ 正向心理學與創造力專題實務訓練</div><div class="text-sm text-slate-500 italic font-bold">Project-Based Experiential Practicum in Positive Psychology and Creativity</div></li>
                             </ul>
                         </div>
                         <div>
@@ -359,8 +213,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- 教練2 -->
                 <div class="coach-card group shadow-sm rounded-xl">
                     <div class="flex justify-between items-start mb-10">
                         <div>
@@ -373,14 +225,8 @@
                         <div>
                             <h4 class="label-text mb-6 border-l-4 border-slate-200 pl-4" data-i18n="coach-bg-label">BACKGROUND & TRAINING / 專業背景與訓練</h4>
                             <ul class="text-base space-y-6 text-slate-700 leading-relaxed">
-                                <li class="flex flex-col">
-                                    <div class="font-medium" data-i18n="coach2-edu1">/ 相關修課背景：正向藝術/音樂治療、心理諮商與治療概論</div>
-                                    <div class="text-sm text-slate-500 italic font-bold">Relevant Coursework: Positive Art/Music Therapy, Introduction to Counseling & Psychotherapy</div>
-                                </li>
-                                <li class="flex flex-col">
-                                    <div class="font-medium" data-i18n="coach2-edu2">/ 正向藝術/音樂治療、心理諮商與治療概論專題實務訓練</div>
-                                    <div class="text-sm text-slate-500 italic font-bold">Project-Based Experiential Practicum in Positive Art and Music Intervention and Counseling</div>
-                                </li>
+                                <li class="flex flex-col"><div class="font-medium" data-i18n="coach2-edu1">/ 相關修課背景：正向藝術/音樂治療、心理諮商與治療概論</div><div class="text-sm text-slate-500 italic font-bold">Relevant Coursework: Positive Art/Music Therapy, Introduction to Counseling & Psychotherapy</div></li>
+                                <li class="flex flex-col"><div class="font-medium" data-i18n="coach2-edu2">/ 正向藝術/音樂治療、心理諮商與治療概論專題實務訓練</div><div class="text-sm text-slate-500 italic font-bold">Project-Based Experiential Practicum in Positive Art and Music Intervention and Counseling</div></li>
                             </ul>
                         </div>
                         <div>
@@ -431,7 +277,7 @@
         </div>
     </section>
 
-    <!-- 服務項目 (What We Offer) -->
+    <!-- Services -->
     <section id="services" class="py-40 px-10 md:px-24">
         <div class="max-w-6xl mx-auto">
             <div class="mb-32 reveal">
@@ -439,7 +285,6 @@
                 <p class="label-text" data-i18n="ser-subtitle">支持與發展面向 / AREAS OF SUPPORT</p>
             </div>
             <div class="reveal">
-                <!-- Cultivation -->
                 <div class="service-item flex flex-col md:flex-row justify-between items-start">
                     <div class="md:w-1/3 mb-12 md:mb-0">
                         <h3 class="serif text-4xl italic font-bold mb-4">Cultivation</h3>
@@ -452,8 +297,6 @@
                         <div class="text-base font-medium border-l-2 border-slate-200 pl-8"><span data-i18n="ser-w4">持續的動機校準與自我陪伴</span><span class="text-sm uppercase tracking-tight text-slate-500 block mt-2 italic font-bold">Ongoing motivation calibration and self-accompaniment</span></div>
                     </div>
                 </div>
-
-                <!-- Connections -->
                 <div class="service-item flex flex-col md:flex-row justify-between items-start">
                     <div class="md:w-1/3 mb-12 md:mb-0">
                         <h3 class="serif text-4xl italic font-bold mb-4">Connections</h3>
@@ -466,8 +309,6 @@
                         <div class="text-base font-medium border-l-2 border-slate-200 pl-8"><span data-i18n="ser-c4">自我價值與角色認同</span><span class="text-sm uppercase tracking-tight text-slate-500 block mt-2 italic font-bold">Self-worth and identity</span></div>
                     </div>
                 </div>
-
-                <!-- Purpose -->
                 <div class="service-item flex flex-col md:flex-row justify-between items-start">
                     <div class="md:w-1/3 mb-12 md:mb-0">
                         <h3 class="serif text-4xl italic font-bold mb-4">Purpose</h3>
@@ -480,8 +321,6 @@
                         <div class="text-base font-medium border-l-2 border-slate-200 pl-8"><span data-i18n="ser-d4">從迷惘到方向的轉化</span><span class="text-sm uppercase tracking-tight text-slate-500 block mt-2 italic font-bold">Transforming confusion into clarity</span></div>
                     </div>
                 </div>
-
-                <!-- Expression -->
                 <div class="service-item flex flex-col md:flex-row justify-between items-start">
                     <div class="md:w-1/3 mb-12 md:mb-0">
                         <h3 class="serif text-4xl italic font-bold mb-4">Expression</h3>
@@ -496,7 +335,7 @@
         </div>
     </section>
 
-    <!-- 輔導形式 (How We Support) -->
+    <!-- Formats -->
     <section id="formats" class="py-40 px-10 md:px-24 bg-[#fafafa]">
         <div class="max-w-6xl mx-auto reveal">
             <div class="mb-24 flex flex-col md:flex-row justify-between items-end border-b border-slate-200 pb-10">
@@ -508,7 +347,6 @@
                     <p class="text-base text-slate-500 leading-relaxed italic" data-i18n="fmt-intro">針對不同的需求與目標，提供量身定制的支持管道。</p>
                 </div>
             </div>
-
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
                 <div class="format-item rounded-2xl group flex flex-col items-start">
                     <div class="w-full flex justify-between items-start mb-12">
@@ -528,7 +366,6 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="format-item rounded-2xl group flex flex-col items-start">
                     <div class="w-full flex justify-between items-start mb-12">
                         <span class="serif text-5xl italic text-slate-200 group-hover:text-black transition-colors duration-500">02.</span>
@@ -548,14 +385,13 @@
                     </div>
                 </div>
             </div>
-            
             <div class="mt-20 text-center">
                 <p class="text-lg md:text-xl font-bold tracking-tight text-slate-400 italic serif">No diagnosis, no labeling — only understanding and growth.</p>
             </div>
         </div>
     </section>
 
-    <!-- 頁腳 -->
+    <!-- Footer -->
     <footer id="contact" class="py-40 px-10 md:px-24 border-t border-slate-100">
         <div class="max-w-6xl mx-auto reveal">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-32">
@@ -572,7 +408,7 @@
                 </div>
             </div>
             <div class="mt-40 pt-16 border-t border-slate-100 label-text text-slate-400">
-                <p>© 2025–2026 LIFE PROGRESS CENTER.</p>
+                <p>© 2026 LIFE PROGRESS CENTER.</p>
             </div>
         </div>
     </footer>
@@ -652,10 +488,13 @@
                 'coach-ser-label': 'CORE SERVICE / 提供服務',
                 'philosophy-title': 'Our Stance',
                 'philosophy-p1': '我們不承諾「一定成功」、「永遠幸福」或「保證突破」。',
-                'philosophy-p2': '我們相信生命的發展是<strong>方向性的</strong>，而非保證的結果；',
-                'philosophy-p3': '苦難與不確定不是要被消除的暫時障礙，而是成長結構的一部分。',
+                'philosophy-p2': '我們相信生命的發展是方向性的，而非保證的結果；',
+                'philosophy-p3': '逆境與不確定不是要被消除的暫時障礙，而是成長結構的一部分。',
                 'philosophy-p4': '我們的角色是陪伴你在現實的約束中，持續校準、恢復、更新，<br>一步一步朝向更成熟、更具意義的生命歷程。',
-                'philosophy-tag': '— Developmental Sobriety • 發展的清醒 —',
+                'philosophy-p1-en': 'We do not promise “certain success,” “perpetual happiness,” or “guaranteed breakthroughs.”',
+                'philosophy-p2-en': 'We believe that development is directional, not a guaranteed outcome;',
+                'philosophy-p3-en': 'Adversity and uncertainty are not temporary obstacles to be eliminated, but integral parts of the structure of growth.',
+                'philosophy-p4-en': 'Our role is to accompany you within the constraints of reality, continuously calibrating, recovering, and renewing,<br>step by step toward a more mature and meaningful life journey.',
                 'foot-quote': '尋找生命的進程<br>每一段迷惘、每一次倒退，都是生命校準的伏筆',
                 'foot-cta': 'Schedule a Coaching Session!'
             },
@@ -732,10 +571,13 @@
                 'coach-ser-label': 'CORE SERVICE / 提供服务',
                 'philosophy-title': 'Our Stance',
                 'philosophy-p1': '我们不承诺「一定成功」、「永远幸福」或「保证突破」。',
-                'philosophy-p2': '我们相信生命的发展是<strong>方向性的</strong>，而非保证的结果；',
-                'philosophy-p3': '苦难与不确定不是要被消除的暂时障碍，而是成长结构的一部分。',
+                'philosophy-p2': '我们相信生命的发展是方向性的，而非保证的结果；',
+                'philosophy-p3': '逆境与不确定不是要被消除的暂时障碍，而是成长结构的一部分。',
                 'philosophy-p4': '我们的角色是陪伴你在现实的约束中，持续校准、恢复、更新，<br>一步一步朝向更成熟、更具意义的生命历程。',
-                'philosophy-tag': '— Developmental Sobriety • 发展的清醒 —',
+                'philosophy-p1-en': 'We do not promise “certain success,” “perpetual happiness,” or “guaranteed breakthroughs.”',
+                'philosophy-p2-en': 'We believe that development is directional, not a guaranteed outcome;',
+                'philosophy-p3-en': 'Adversity and uncertainty are not temporary obstacles to be eliminated, but integral parts of the structure of growth.',
+                'philosophy-p4-en': 'Our role is to accompany you within the constraints of reality, continuously calibrating, recovering, and renewing,<br>step by step toward a more mature and meaningful life journey.',
                 'foot-quote': '寻找生命的进程<br>每一段迷惘、每一次倒退，都是生命校准的伏笔',
                 'foot-cta': 'Schedule a Coaching Session!'
             }
@@ -751,10 +593,8 @@
             document.getElementById('btn-hans').classList.toggle('lang-active', lang === 'zh-hans');
         }
 
-        // 手機選單
         document.getElementById('mobile-menu-btn').addEventListener('click', () => {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('active');
+            document.getElementById('mobile-menu').classList.toggle('active');
         });
 
         const observer = new IntersectionObserver((entries) => {

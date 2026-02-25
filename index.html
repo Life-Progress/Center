@@ -144,6 +144,13 @@
             line-height: 1.5;
             letter-spacing: normal;
         }
+
+        #mobile-menu {
+            display: none;
+        }
+        #mobile-menu.active {
+            display: block;
+        }
     </style>
 </head>
 <body data-lang="zh-hans">
@@ -154,9 +161,12 @@
             <span class="serif font-bold text-2xl tracking-tighter">Life Progress Center</span>
             <span class="label-text mt-1 text-slate-500" data-i18n="nav-subtitle">生命進程中心</span>
         </div>
-        <div class="flex items-center space-x-8 md:space-x-12">
-            <div class="hidden md:flex space-x-12 text-[12px] uppercase tracking-[0.2em] font-bold">
+        
+        <!-- 桌面選單 -->
+        <div class="hidden md:flex items-center space-x-8 md:space-x-12">
+            <div class="flex space-x-12 text-[12px] uppercase tracking-[0.2em] font-bold">
                 <a href="#about" class="nav-link hover:opacity-40 transition" data-i18n="nav-bg">Who We Are</a>
+                <a href="#philosophy" class="nav-link hover:opacity-40 transition" data-i18n="nav-philosophy">Our Stance</a>
                 <a href="#whom" class="nav-link hover:opacity-40 transition" data-i18n="nav-whom">Who We Serve</a>
                 <a href="#services" class="nav-link hover:opacity-40 transition" data-i18n="nav-services">What We Offer</a>
                 <a href="#formats" class="nav-link hover:opacity-40 transition" data-i18n="nav-formats">How We Support</a>
@@ -167,14 +177,31 @@
                 <button onclick="switchLang('zh-hans')" id="btn-hans" class="lang-switch lang-active">简 / EN</button>
             </div>
         </div>
+
+        <!-- 手機漢堡 -->
+        <button id="mobile-menu-btn" class="md:hidden text-3xl text-slate-700">
+            <i class="fas fa-bars"></i>
+        </button>
     </nav>
+
+    <!-- 手機選單 -->
+    <div id="mobile-menu" class="fixed top-[88px] left-0 w-full bg-white border-b border-slate-100 shadow-lg z-40 md:hidden">
+        <div class="flex flex-col text-[15px] font-medium py-6 px-10 space-y-6">
+            <a href="#about" class="nav-link mobile-link" data-i18n="nav-bg">Who We Are</a>
+            <a href="#philosophy" class="nav-link mobile-link" data-i18n="nav-philosophy">Our Stance</a>
+            <a href="#whom" class="nav-link mobile-link" data-i18n="nav-whom">Who We Serve</a>
+            <a href="#services" class="nav-link mobile-link" data-i18n="nav-services">What We Offer</a>
+            <a href="#formats" class="nav-link mobile-link" data-i18n="nav-formats">How We Support</a>
+            <a href="#contact" class="nav-link mobile-link" data-i18n="nav-contact">CONNECT WITH US</a>
+        </div>
+    </div>
 
     <!-- 首頁區塊 (Hero) -->
     <section id="hero" class="min-h-screen flex flex-col justify-center px-10 md:px-24 pt-20">
         <div class="max-w-7xl reveal">
             <h1 class="hero-text serif text-[12vw] md:text-[9vw] font-bold mb-16">
                 Making Progress<br>
-                <span class="italic text-slate-100">In Your Life</span>
+                <span class="italic text-slate-400">In the Midst of Life</span>
             </h1>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20">
@@ -269,7 +296,21 @@
         </div>
     </section>
 
-    <!-- 學生教練區塊 (Student Coaches) -->
+    <!-- 我們的立場（新區塊） -->
+    <section id="philosophy" class="py-40 px-10 md:px-24">
+        <div class="max-w-4xl mx-auto text-center reveal">
+            <h2 class="serif text-6xl md:text-7xl mb-16" data-i18n="philosophy-title">Our Stance</h2>
+            <div class="space-y-12 text-xl font-light leading-relaxed text-slate-700">
+                <p data-i18n="philosophy-p1">我們不承諾「一定成功」、「永遠幸福」或「保證突破」。</p>
+                <p data-i18n="philosophy-p2">我們相信生命的發展是<strong>方向性的</strong>，而非保證的結果；</p>
+                <p data-i18n="philosophy-p3">苦難與不確定不是要被消除的暫時障礙，而是成長結構的一部分。</p>
+                <p data-i18n="philosophy-p4">我們的角色是陪伴你在現實的約束中，持續校準、恢復、更新，<br>一步一步朝向更成熟、更具意義的生命歷程。</p>
+                <p class="italic text-slate-400 text-lg" data-i18n="philosophy-tag">— Developmental Sobriety • 發展的清醒 —</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 學生教練區塊 -->
     <section id="coaches" class="py-40 px-10 md:px-24">
         <div class="max-w-6xl mx-auto reveal">
             <div class="flex flex-col md:flex-row justify-between items-end mb-20 border-b border-slate-200 pb-10">
@@ -286,7 +327,7 @@
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                <!-- 教練1 - Junior Coach -->
+                <!-- 教練1 -->
                 <div class="coach-card group shadow-sm rounded-xl">
                     <div class="flex justify-between items-start mb-10">
                         <div>
@@ -319,7 +360,7 @@
                     </div>
                 </div>
 
-                <!-- 教練2 - Senior Coach -->
+                <!-- 教練2 -->
                 <div class="coach-card group shadow-sm rounded-xl">
                     <div class="flex justify-between items-start mb-10">
                         <div>
@@ -382,8 +423,8 @@
                     </div>
                     <div class="for-whom-card">
                         <span class="text-lg font-bold serif italic text-slate-300 block mb-6">04</span>
-                        <p class="text-xl font-medium mb-4" data-i18n="whom-4">希望從「生存」走向「茁壯」的學生</p>
-                        <p class="label-text" data-i18n="whom-en-4">Students seeking to grow from surviving to thriving</p>
+                        <p class="text-xl font-medium mb-4" data-i18n="whom-4">希望在現實挑戰中持續前行、從僅僅生存走向更有韌性與意義的生命歷程的學生</p>
+                        <p class="label-text" data-i18n="whom-en-4">Students who wish to keep moving forward amid real-life challenges, moving from mere survival to a life journey with greater resilience and meaning</p>
                     </div>
                 </div>
             </div>
@@ -398,17 +439,17 @@
                 <p class="label-text" data-i18n="ser-subtitle">支持與發展面向 / AREAS OF SUPPORT</p>
             </div>
             <div class="reveal">
-                <!-- Flourishing -->
+                <!-- Cultivation -->
                 <div class="service-item flex flex-col md:flex-row justify-between items-start">
                     <div class="md:w-1/3 mb-12 md:mb-0">
-                        <h3 class="serif text-4xl italic font-bold mb-4">Flourishing</h3>
-                        <p class="label-text">VITALITY & POTENTIAL</p>
+                        <h3 class="serif text-4xl italic font-bold mb-4">Cultivation</h3>
+                        <p class="label-text">GROWTH & CULTIVATION / 培育與生長</p>
                     </div>
                     <div class="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-16">
                         <div class="text-base font-medium border-l-2 border-slate-200 pl-8"><span data-i18n="ser-w1">品格強項與潛能探索</span><span class="text-sm uppercase tracking-tight text-slate-500 block mt-2 italic font-bold">Character strengths and potential exploration</span></div>
                         <div class="text-base font-medium border-l-2 border-slate-200 pl-8"><span data-i18n="ser-w2">自我認同與人生意義</span><span class="text-sm uppercase tracking-tight text-slate-500 block mt-2 italic font-bold">Identity and meaning-making</span></div>
-                        <div class="text-base font-medium border-l-2 border-slate-200 pl-8"><span data-i18n="ser-w3">幸福感、韌性與心理資本</span><span class="text-sm uppercase tracking-tight text-slate-500 block mt-2 italic font-bold">Well-being, resilience, and psychological capital</span></div>
-                        <div class="text-base font-medium border-l-2 border-slate-200 pl-8"><span data-i18n="ser-w4">動機與自我成長</span><span class="text-sm uppercase tracking-tight text-slate-500 block mt-2 italic font-bold">Motivation and personal growth</span></div>
+                        <div class="text-base font-medium border-l-2 border-slate-200 pl-8"><span data-i18n="ser-w3">在不確定中培育的韌性與內在資源</span><span class="text-sm uppercase tracking-tight text-slate-500 block mt-2 italic font-bold">Resilience and inner resources cultivated amid uncertainty</span></div>
+                        <div class="text-base font-medium border-l-2 border-slate-200 pl-8"><span data-i18n="ser-w4">持續的動機校準與自我陪伴</span><span class="text-sm uppercase tracking-tight text-slate-500 block mt-2 italic font-bold">Ongoing motivation calibration and self-accompaniment</span></div>
                     </div>
                 </div>
 
@@ -446,7 +487,7 @@
                         <h3 class="serif text-4xl italic font-bold mb-4">Expression</h3>
                         <p class="label-text">CREATIVITY & EXPRESSIVE APPROACHES</p>
                     </div>
-                    <div class="md:w-2/3 grid grid-cols-1 md:md:grid-cols-2 gap-y-12 gap-x-16">
+                    <div class="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-16">
                         <div class="text-base font-medium border-l-2 border-slate-200 pl-8"><span data-i18n="ser-e1">正向藝術/音樂表達</span><span class="text-sm uppercase tracking-tight text-slate-500 block mt-2 italic font-bold">Positive Art/Music Expression</span></div>
                         <div class="text-base font-medium border-l-2 border-slate-200 pl-8"><span data-i18n="ser-e2">創造力探索與生命敘事</span><span class="text-sm uppercase tracking-tight text-slate-500 block mt-2 italic font-bold">Creative exploration and life narratives</span></div>
                     </div>
@@ -514,13 +555,13 @@
         </div>
     </section>
 
-    <!-- 頁腳 (Footer) -->
+    <!-- 頁腳 -->
     <footer id="contact" class="py-40 px-10 md:px-24 border-t border-slate-100">
         <div class="max-w-6xl mx-auto reveal">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-32">
                 <div>
                     <h2 class="serif text-6xl md:text-8xl mb-16 tracking-tighter" data-i18n="nav-contact-footer">Connect<br>with Us</h2>
-                    <p class="text-2xl md:text-3xl font-light mb-16 italic leading-relaxed text-slate-500" data-i18n="foot-quote">尋找生命進程<br>每一段迷惘都是人生方向的伏筆</p>
+                    <p class="text-2xl md:text-3xl font-light mb-16 italic leading-relaxed text-slate-500" data-i18n="foot-quote">尋找生命的進程<br>每一段迷惘、每一次倒退，都是生命校準的伏筆</p>
                     <a href="https://www.kuai-yuyue.com/" target="_blank" class="cta-button text-2xl serif italic border-b-2 border-black pb-3 font-bold" data-i18n="foot-cta">Schedule a Coaching Session!</a>
                 </div>
                 <div class="flex flex-col justify-end space-y-10 md:text-right">
@@ -531,7 +572,7 @@
                 </div>
             </div>
             <div class="mt-40 pt-16 border-t border-slate-100 label-text text-slate-400">
-                <p>© 2026 LIFE PROGRESS CENTER.</p>
+                <p>© 2025–2026 LIFE PROGRESS CENTER.</p>
             </div>
         </div>
     </footer>
@@ -541,6 +582,7 @@
             'zh-hant': {
                 'nav-subtitle': '生命進程中心',
                 'nav-bg': 'Who We Are',
+                'nav-philosophy': 'Our Stance',
                 'nav-whom': 'Who We Serve',
                 'nav-services': 'What We Offer',
                 'nav-formats': 'How We Support',
@@ -569,13 +611,13 @@
                 'whom-en-2': 'Students experiencing uncertainty about their life direction, meaning, and future',
                 'whom-3': '希望提升創造力、自我表達與內在動力的學生',
                 'whom-en-3': 'Students seeking to cultivate creativity, authentic self-expression, and intrinsic motivation',
-                'whom-4': '希望從「生存」走向「茁壯」的學生',
-                'whom-en-4': 'Students seeking to grow from surviving to thriving',
+                'whom-4': '希望在現實挑戰中持續前行、從僅僅生存走向更有韌性與意義的生命歷程的學生',
+                'whom-en-4': 'Students who wish to keep moving forward amid real-life challenges, moving from mere survival to a life journey with greater resilience and meaning',
                 'ser-subtitle': '支持與發展面向 / AREAS OF SUPPORT',
                 'ser-w1': '品格強項與潛能探索',
                 'ser-w2': '自我認同與人生意義',
-                'ser-w3': '幸福感、韌性與心理資本',
-                'ser-w4': '動機與自我成長',
+                'ser-w3': '在不確定中培育的韌性與內在資源',
+                'ser-w4': '持續的動機校準與自我陪伴',
                 'ser-c1': '人際關係與溝通',
                 'ser-c2': '家庭與情感議題',
                 'ser-c3': '親密關係與界線',
@@ -608,12 +650,19 @@
                 'coach2-service': '正向藝術/音樂表達',
                 'coach-bg-label': 'BACKGROUND & TRAINING / 專業背景與訓練',
                 'coach-ser-label': 'CORE SERVICE / 提供服務',
-                'foot-quote': '尋找生命的進程<br>每一段迷惘都是人生方向的伏筆',
+                'philosophy-title': 'Our Stance',
+                'philosophy-p1': '我們不承諾「一定成功」、「永遠幸福」或「保證突破」。',
+                'philosophy-p2': '我們相信生命的發展是<strong>方向性的</strong>，而非保證的結果；',
+                'philosophy-p3': '苦難與不確定不是要被消除的暫時障礙，而是成長結構的一部分。',
+                'philosophy-p4': '我們的角色是陪伴你在現實的約束中，持續校準、恢復、更新，<br>一步一步朝向更成熟、更具意義的生命歷程。',
+                'philosophy-tag': '— Developmental Sobriety • 發展的清醒 —',
+                'foot-quote': '尋找生命的進程<br>每一段迷惘、每一次倒退，都是生命校準的伏筆',
                 'foot-cta': 'Schedule a Coaching Session!'
             },
             'zh-hans': {
                 'nav-subtitle': '生命进程中心',
                 'nav-bg': 'Who We Are',
+                'nav-philosophy': 'Our Stance',
                 'nav-whom': 'Who We Serve',
                 'nav-services': 'What We Offer',
                 'nav-formats': 'How We Support',
@@ -642,13 +691,13 @@
                 'whom-en-2': 'Students experiencing uncertainty about their life direction, meaning, and future',
                 'whom-3': '希望提升创造力、自我表达与内在动力的学生',
                 'whom-en-3': 'Students seeking to cultivate creativity, authentic self-expression, and intrinsic motivation',
-                'whom-4': '希望从“生存”走向“茁壮”的学生',
-                'whom-en-4': 'Students seeking to grow from surviving to thriving',
+                'whom-4': '希望在现实挑战中持续前行、从仅仅生存走向更有韧性与意义的生命历程的学生',
+                'whom-en-4': 'Students who wish to keep moving forward amid real-life challenges, moving from mere survival to a life journey with greater resilience and meaning',
                 'ser-subtitle': '支持与发展面向 / AREAS OF SUPPORT',
                 'ser-w1': '品格强项与潜能探索',
                 'ser-w2': '自我认同与人生意义',
-                'ser-w3': '幸福感、韧性与心理资本',
-                'ser-w4': '动机与自我成长',
+                'ser-w3': '在不确定中培育的韧性与内在资源',
+                'ser-w4': '持续的动机校准与自我陪伴',
                 'ser-c1': '人际关系与沟通',
                 'ser-c2': '家庭与情感议题',
                 'ser-c3': '亲密关系与界线',
@@ -670,18 +719,24 @@
                 'fmt-2-desc': '在安全、支持的团体环境中，<br>透过分享经验与集体创作，学习共感与連結，在彼此鼓励下共同探索核心价值与潜能。',
                 'fmt-2-en': 'Within a safe and supportive group setting, learn empathy and connection through shared experiences and collective creation, growing together while exploring your core values and potential.',
                 'coach-title': 'PEER SUPPORT & COACHING / 学生教练团队',
-                'coach-intro': '我们的学生教练经过专业课程训练，协助同僚在学习与生活中找到支撑力量。<br><span class="text-sm not-italic opacity-70 mt-2 block font-medium">Our student coaches are professionally trained to support peers through life and academic challenges.</span>',
+                'coach-intro': '我们的学生教练经过专业课程训练，协助同儕在学习与生活中找到支撑力量。<br><span class="text-sm not-italic opacity-70 mt-2 block font-medium">Our student coaches are professionally trained to support peers through life and academic challenges.</span>',
                 'coach1-name': '陈同学 / Chen, Xiao-Ming',
                 'coach1-edu1': '/ 相关修课背景：正向心理学、创造力',
                 'coach1-edu2': '/ 正向心理学与创造力专题实务训练',
                 'coach1-service': '品格强项与潜能探索',
                 'coach2-name': '林同学 / Lin, Sarah',
                 'coach2-edu1': '/ 相关修课背景：正向艺术/音乐治疗、心理咨询与治疗概论',
-                'coach2-edu2': '/ 正向艺术/音樂治疗、心理咨询与治疗概论专题实务训练',
+                'coach2-edu2': '/ 正向艺术/音乐治疗、心理咨询与治疗概论专题实务训练',
                 'coach2-service': '正向艺术/音乐表达',
                 'coach-bg-label': 'BACKGROUND & TRAINING / 专业背景与训练',
                 'coach-ser-label': 'CORE SERVICE / 提供服务',
-                'foot-quote': '寻找生命的进程<br>每一段迷惘都是人生方向的伏筆',
+                'philosophy-title': 'Our Stance',
+                'philosophy-p1': '我们不承诺「一定成功」、「永远幸福」或「保证突破」。',
+                'philosophy-p2': '我们相信生命的发展是<strong>方向性的</strong>，而非保证的结果；',
+                'philosophy-p3': '苦难与不确定不是要被消除的暂时障碍，而是成长结构的一部分。',
+                'philosophy-p4': '我们的角色是陪伴你在现实的约束中，持续校准、恢复、更新，<br>一步一步朝向更成熟、更具意义的生命历程。',
+                'philosophy-tag': '— Developmental Sobriety • 发展的清醒 —',
+                'foot-quote': '寻找生命的进程<br>每一段迷惘、每一次倒退，都是生命校准的伏笔',
                 'foot-cta': 'Schedule a Coaching Session!'
             }
         };
@@ -695,6 +750,12 @@
             document.getElementById('btn-hant').classList.toggle('lang-active', lang === 'zh-hant');
             document.getElementById('btn-hans').classList.toggle('lang-active', lang === 'zh-hans');
         }
+
+        // 手機選單
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('active');
+        });
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {

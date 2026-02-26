@@ -35,11 +35,17 @@
         .desc-en { text-align: left; line-height: 1.5; letter-spacing: normal; }
         #mobile-menu { display: none; }
         #mobile-menu.active { display: block; }
+
+        /* LP Method cards */
+        .lp-card { border: 1px solid #f1f1f1; background: #fff; padding: 2.25rem; transition: all 0.5s ease; }
+        .lp-card:hover { border-color: #000; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .pill { display: inline-flex; align-items: center; gap: .5rem; border: 1px solid #e5e7eb; padding: .5rem .85rem; border-radius: 999px; font-weight: 700; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #111827; background: #fff; }
+        .micro-tag { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 800; color: #0f172a; background: #f8fafc; border: 1px solid #e2e8f0; padding: .35rem .6rem; border-radius: 999px; }
     </style>
 </head>
 <body data-lang="zh-hans">
 
-    <!-- 導航欄（Our Stance 已移到最前面） -->
+    <!-- NAV -->
     <nav id="main-nav" class="fixed w-full z-50 py-6 px-10 flex justify-between items-center nav-blur border-b border-slate-50">
         <div class="flex flex-col">
             <span class="serif font-bold text-2xl tracking-tighter">Life Progress Center</span>
@@ -50,6 +56,7 @@
                 <a href="#philosophy" class="nav-link hover:opacity-40 transition" data-i18n="nav-philosophy">Our Stance</a>
                 <a href="#about" class="nav-link hover:opacity-40 transition" data-i18n="nav-bg">Who We Are</a>
                 <a href="#whom" class="nav-link hover:opacity-40 transition" data-i18n="nav-whom">Who We Serve</a>
+                <a href="#method" class="nav-link hover:opacity-40 transition" data-i18n="nav-method">The LP Method</a>
                 <a href="#services" class="nav-link hover:opacity-40 transition" data-i18n="nav-services">What We Offer</a>
                 <a href="#formats" class="nav-link hover:opacity-40 transition" data-i18n="nav-formats">How We Support</a>
                 <a href="#contact" class="nav-link hover:opacity-40 transition" data-i18n="nav-contact">CONNECT WITH US</a>
@@ -62,25 +69,32 @@
         <button id="mobile-menu-btn" class="md:hidden text-3xl text-slate-700"><i class="fas fa-bars"></i></button>
     </nav>
 
-    <!-- 手機選單 -->
+    <!-- MOBILE MENU -->
     <div id="mobile-menu" class="fixed top-[88px] left-0 w-full bg-white border-b border-slate-100 shadow-lg z-40 md:hidden">
         <div class="flex flex-col text-[15px] font-medium py-6 px-10 space-y-6">
             <a href="#philosophy" class="nav-link mobile-link" data-i18n="nav-philosophy">Our Stance</a>
             <a href="#about" class="nav-link mobile-link" data-i18n="nav-bg">Who We Are</a>
             <a href="#whom" class="nav-link mobile-link" data-i18n="nav-whom">Who We Serve</a>
+            <a href="#method" class="nav-link mobile-link" data-i18n="nav-method">The LP Method</a>
             <a href="#services" class="nav-link mobile-link" data-i18n="nav-services">What We Offer</a>
             <a href="#formats" class="nav-link mobile-link" data-i18n="nav-formats">How We Support</a>
             <a href="#contact" class="nav-link mobile-link" data-i18n="nav-contact">CONNECT WITH US</a>
         </div>
     </div>
 
-    <!-- Hero -->
+    <!-- HERO -->
     <section id="hero" class="min-h-screen flex flex-col justify-center px-10 md:px-24 pt-20">
         <div class="max-w-7xl reveal">
-            <h1 class="hero-text serif text-[12vw] md:text-[9vw] font-bold mb-16">
+            <h1 class="hero-text serif text-[12vw] md:text-[9vw] font-bold mb-10">
                 Making Progress<br>
                 <span class="italic text-slate-400">In the Midst of Life</span>
             </h1>
+
+            <div class="mb-12 flex flex-wrap gap-3 items-center">
+                <span class="pill" data-i18n="hero-pill-zh">Recovery 恢復 × Renewal 更新 · 2R–4T</span>
+                <span class="text-sm text-slate-500 italic serif" data-i18n="hero-pill-en">Directional progress under real constraints.</span>
+            </div>
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20">
                 <div class="space-y-4">
                     <p class="text-2xl md:text-3xl leading-relaxed font-medium" data-i18n="hero-slogan-zh">在迷惘中找到方向<br>在困境中重建力量<br>陪你走向更有意義的人生</p>
@@ -92,29 +106,31 @@
         </div>
     </section>
 
-    <!-- Our Stance (中英雙語，已更新第一句) -->
+    <!-- OUR STANCE -->
     <section id="philosophy" class="py-40 px-10 md:px-24">
         <div class="max-w-4xl mx-auto text-center reveal">
             <h2 class="serif text-6xl md:text-7xl mb-16" data-i18n="philosophy-title">Our Stance</h2>
             <div class="max-w-3xl mx-auto">
-                <div class="description-block desc-zh space-y-8 mb-12">
+                <div class="description-block desc-zh space-y-8 mb-10">
                     <p class="text-xl font-light leading-relaxed text-slate-700" data-i18n="philosophy-p1">我們不以誇大的保證作為承諾，而是專注於可持續的成長與真實的進展。</p>
                     <p class="text-xl font-light leading-relaxed text-slate-700" data-i18n="philosophy-p2">我們相信生命的發展是方向性的，而非保證的結果；</p>
                     <p class="text-xl font-light leading-relaxed text-slate-700" data-i18n="philosophy-p3">逆境與不確定不是要被消除的暫時障礙，而是成長結構的一部分。</p>
                     <p class="text-xl font-light leading-relaxed text-slate-700" data-i18n="philosophy-p4">我們的角色是陪伴你在現實的約束中，持續校準、恢復、更新，<br>一步一步朝向更成熟、更具意義的生命歷程。</p>
+                    <p class="text-base text-slate-500 italic serif" data-i18n="philosophy-boundary-zh">我們提供教練式支持與同儕支撐，不提供心理治療或精神醫療；若有嚴重困擾，建議轉介至合格專業。</p>
                 </div>
-                <div class="h-px w-12 bg-slate-200 mx-auto mb-12"></div>
-                <div class="description-block desc-en space-y-8">
+                <div class="h-px w-12 bg-slate-200 mx-auto mb-10"></div>
+                <div class="description-block desc-en space-y-7">
                     <p class="text-base italic serif text-slate-500 leading-relaxed" data-i18n="philosophy-p1-en">Rather than offering exaggerated guarantees, we focus on sustainable growth and real progress.</p>
                     <p class="text-base italic serif text-slate-500 leading-relaxed" data-i18n="philosophy-p2-en">We believe that development is directional, not a guaranteed outcome;</p>
                     <p class="text-base italic serif text-slate-500 leading-relaxed" data-i18n="philosophy-p3-en">Adversity and uncertainty are not temporary obstacles to be eliminated, but integral parts of the structure of growth.</p>
                     <p class="text-base italic serif text-slate-500 leading-relaxed" data-i18n="philosophy-p4-en">Our role is to accompany you within the constraints of reality, continuously calibrating, recovering, and renewing, step by step toward a more mature and meaningful life journey.</p>
+                    <p class="text-sm italic serif text-slate-400 leading-relaxed" data-i18n="philosophy-boundary-en">We provide coaching and peer support—not psychotherapy or psychiatric care. For severe distress, we recommend referral to licensed professionals.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Who We Are -->
+    <!-- WHO WE ARE -->
     <section id="about" class="py-40 px-10 md:px-24 bg-[#fafafa]">
         <div class="max-w-6xl mx-auto">
             <div class="mb-24 reveal">
@@ -124,10 +140,11 @@
                     <p class="text-3xl md:text-4xl font-medium mb-4" data-i18n="hero-name">焦恩臨 教授 / Professor Chiao, En-Ling</p>
                     <div class="label-text text-lg leading-loose text-slate-600">
                         <span data-i18n="hero-title1">創辦主任＆首席教練</span>｜FOUNDING DIRECTOR & LEAD COACH<br>
-                        <span data-i18n="hero-title2">意義與潛能架構師</span>｜ARCHITECT OF MEANING & POTENTIAL
+                        <span data-i18n="hero-title2">方向與意義架構師</span>｜ARCHITECT OF DIRECTION & MEANING
                     </div>
                 </div>
             </div>
+
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-32">
                 <div class="reveal">
                     <span class="serif text-slate-200 text-7xl md:text-8xl italic block mb-10">Education</span>
@@ -156,6 +173,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="reveal">
                     <span class="serif text-slate-200 text-7xl md:text-8xl italic block mb-10">Mentors</span>
                     <p class="label-text mb-12" data-i18n="mentor-subtitle">MENTORED BY / 師承</p>
@@ -175,7 +193,7 @@
         </div>
     </section>
 
-    <!-- Student Coaches -->
+    <!-- STUDENT COACHES -->
     <section id="coaches" class="py-40 px-10 md:px-24">
         <div class="max-w-6xl mx-auto reveal">
             <div class="flex flex-col md:flex-row justify-between items-end mb-20 border-b border-slate-200 pb-10">
@@ -184,9 +202,10 @@
                     <p class="label-text" data-i18n="coach-title">PEER SUPPORT & COACHING / 學生教練團隊</p>
                 </div>
                 <div class="mt-10 md:mt-0 max-w-sm text-right">
-                    <p class="text-base text-slate-500 leading-relaxed italic" data-i18n="coach-intro">我們的學生教練經過專業課程訓練，協助同儕在學習與生活中找到支撐力量。<br><span class="text-sm not-italic opacity-70 mt-2 block font-medium">Our student coaches are professionally trained to support peers through life and academic challenges.</span></p>
+                    <p class="text-base text-slate-500 leading-relaxed italic" data-i18n="coach-intro">我們的學生教練經過專業課程訓練，提供「微支撐」式同儕支持（不做心理治療）。<br><span class="text-sm not-italic opacity-70 mt-2 block font-medium">Our student coaches provide peer-based micro-support (not psychotherapy).</span></p>
                 </div>
             </div>
+
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
                 <div class="coach-card group shadow-sm rounded-xl">
                     <div class="flex justify-between items-start mb-10">
@@ -206,13 +225,15 @@
                         </div>
                         <div>
                             <h4 class="label-text mb-6 border-l-4 border-slate-200 pl-4" data-i18n="coach-ser-label">CORE SERVICE / 提供服務</h4>
-                            <div class="inline-flex items-center space-x-4">
-                                <div class="bg-black text-white text-[13px] px-6 py-3 font-bold tracking-[0.1em] rounded shadow-sm" data-i18n="coach1-service">品格強項與潛能探索</div>
-                                <span class="text-sm text-slate-500 italic serif font-bold">Character Strengths</span>
+                            <div class="flex flex-wrap gap-3 items-center">
+                                <div class="bg-black text-white text-[13px] px-6 py-3 font-bold tracking-[0.1em] rounded shadow-sm" data-i18n="coach1-service">強項 × 微轉向</div>
+                                <span class="micro-tag" data-i18n="coach1-micro">Transparency + Transition</span>
+                                <span class="text-sm text-slate-500 italic serif font-bold" data-i18n="coach1-service-en">Strengths Micro-support</span>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="coach-card group shadow-sm rounded-xl">
                     <div class="flex justify-between items-start mb-10">
                         <div>
@@ -231,9 +252,10 @@
                         </div>
                         <div>
                             <h4 class="label-text mb-6 border-l-4 border-slate-200 pl-4" data-i18n="coach-ser-label">CORE SERVICE / 提供服務</h4>
-                            <div class="inline-flex items-center space-x-4">
-                                <div class="bg-black text-white text-[13px] px-6 py-3 font-bold tracking-[0.1em] rounded shadow-sm" data-i18n="coach2-service">正向藝術/音樂表達</div>
-                                <span class="text-sm text-slate-500 italic serif font-bold">Creative Expression</span>
+                            <div class="flex flex-wrap gap-3 items-center">
+                                <div class="bg-black text-white text-[13px] px-6 py-3 font-bold tracking-[0.1em] rounded shadow-sm" data-i18n="coach2-service">表達 × 看見</div>
+                                <span class="micro-tag" data-i18n="coach2-micro">Transparency + Togetherness</span>
+                                <span class="text-sm text-slate-500 italic serif font-bold" data-i18n="coach2-service-en">Expressive Micro-support</span>
                             </div>
                         </div>
                     </div>
@@ -242,7 +264,7 @@
         </div>
     </section>
 
-    <!-- Who We Serve -->
+    <!-- WHO WE SERVE -->
     <section id="whom" class="py-40 px-10 md:px-24 bg-[#fafafa]">
         <div class="max-w-6xl mx-auto reveal">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-24">
@@ -277,7 +299,65 @@
         </div>
     </section>
 
-    <!-- Services -->
+    <!-- LP METHOD -->
+    <section id="method" class="py-40 px-10 md:px-24">
+        <div class="max-w-6xl mx-auto reveal">
+            <div class="mb-20">
+                <h2 class="serif text-6xl md:text-8xl mb-10" data-i18n="method-title">The LP Method</h2>
+                <div class="h-0.5 w-32 bg-black mb-10"></div>
+                <p class="text-2xl font-medium leading-relaxed text-slate-800" data-i18n="method-subtitle">一個簡單流程：先定位，再前進（不靠硬撐）。</p>
+                <p class="text-base text-slate-500 italic serif mt-4" data-i18n="method-subtitle-en">A simple flow: locate first, then move—without brute forcing.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                <div class="lp-card rounded-2xl">
+                    <p class="label-text mb-4">STEP 1</p>
+                    <h3 class="text-2xl font-bold mb-4" data-i18n="method-s1-title">2R 定位（Recovery 恢復 · Renewal 更新）</h3>
+                    <p class="text-base leading-relaxed text-slate-700" data-i18n="method-s1-desc">
+                        你现在更需要「恢复」（减轻压力/稳住）还是「更新」（重建方向/活出价值）？两者可并行，但先看张力。
+                    </p>
+                    <p class="text-sm italic serif text-slate-500 leading-relaxed mt-4" data-i18n="method-s1-en">
+                        Do you need more Recovery (relieve stress / stabilize) or Renewal (rebuild direction / live your values) right now? They can co-exist—start by noticing the tension.
+                    </p>
+                </div>
+
+                <div class="lp-card rounded-2xl">
+                    <p class="label-text mb-4">STEP 2</p>
+                    <h3 class="text-2xl font-bold mb-4" data-i18n="method-s2-title">4T 卡点（Transparency 通透 · Transformation 转化 · Transition 转向 · Togetherness 同行）</h3>
+                    <p class="text-base leading-relaxed text-slate-700" data-i18n="method-s2-desc">
+                        你卡在哪里：看不清（通透）、鬆動不了（转化）、做不到（转向）、没支撑（同行）？
+                    </p>
+                    <p class="text-sm italic serif text-slate-500 leading-relaxed mt-4" data-i18n="method-s2-en">
+                        Where are you stuck: can’t see clearly (Transparency), can’t shift internally (Transformation), can’t carry it out (Transition), or lack support (Togetherness)?
+                    </p>
+                </div>
+
+                <div class="lp-card rounded-2xl">
+                    <p class="label-text mb-4">STEP 3</p>
+                    <h3 class="text-2xl font-bold mb-4" data-i18n="method-s3-title">微支撑前进</h3>
+                    <p class="text-base leading-relaxed text-slate-700" data-i18n="method-s3-desc">
+                        不追求「立刻变好」。我们设计一个可做到的小步子，并用关系与环境把它撑住。
+                    </p>
+                    <p class="text-sm italic serif text-slate-500 leading-relaxed mt-4" data-i18n="method-s3-en">
+                        We don’t aim for “getting better immediately.” We design one doable next step—and let relationships and environment hold it in place.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-16 p-10 bg-[#fafafa] border border-slate-200 rounded-2xl">
+                <p class="label-text mb-4" data-i18n="method-boundary-title">BOUNDARY / 界线</p>
+                <p class="text-base leading-relaxed text-slate-700" data-i18n="method-boundary-desc">
+                    学生教练提供同侪「微支撑」支持；若涉及严重焦虑/抑郁、创伤、失眠失控、自伤意念等，我们会优先建议转介到校方或合格心理专业。
+                </p>
+                <div class="h-px w-12 bg-slate-200 my-6"></div>
+                <p class="text-sm italic serif text-slate-500 leading-relaxed" data-i18n="method-boundary-en">
+                    Student coaches provide peer-based micro-support. If concerns involve severe anxiety or depression, trauma, uncontrolled insomnia, or self-harm ideation, we prioritize referral to university services or licensed mental health professionals.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
     <section id="services" class="py-40 px-10 md:px-24">
         <div class="max-w-6xl mx-auto">
             <div class="mb-32 reveal">
@@ -288,7 +368,6 @@
                 <div class="service-item flex flex-col md:flex-row justify-between items-start">
                     <div class="md:w-1/3 mb-12 md:mb-0">
                         <h3 class="serif text-4xl italic font-bold mb-4">Cultivation</h3>
-                        <!-- ✅ 修正：加入 i18n，支援簡繁切換 -->
                         <p class="label-text" data-i18n="ser-cat-cult">FORMATION & MATURATION / 生命塑形與成熟</p>
                     </div>
                     <div class="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-16">
@@ -298,10 +377,10 @@
                         <div class="text-base font-medium border-l-2 border-slate-200 pl-8"><span data-i18n="ser-w4">持續的動機校準與自我陪伴</span><span class="text-sm uppercase tracking-tight text-slate-500 block mt-2 italic font-bold">Ongoing motivation calibration and self-accompaniment</span></div>
                     </div>
                 </div>
+
                 <div class="service-item flex flex-col md:flex-row justify-between items-start">
                     <div class="md:w-1/3 mb-12 md:mb-0">
                         <h3 class="serif text-4xl italic font-bold mb-4">Connections</h3>
-                        <!-- ✅ 修正：加入中文翻譯 + i18n，支援簡繁切換 -->
                         <p class="label-text" data-i18n="ser-cat-conn">RELATIONSHIPS & LIFE ISSUES / 人際與生活議題</p>
                     </div>
                     <div class="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-16">
@@ -311,10 +390,10 @@
                         <div class="text-base font-medium border-l-2 border-slate-200 pl-8"><span data-i18n="ser-c4">自我價值與角色認同</span><span class="text-sm uppercase tracking-tight text-slate-500 block mt-2 italic font-bold">Self-worth and identity</span></div>
                     </div>
                 </div>
+
                 <div class="service-item flex flex-col md:flex-row justify-between items-start">
                     <div class="md:w-1/3 mb-12 md:mb-0">
                         <h3 class="serif text-4xl italic font-bold mb-4">Purpose</h3>
-                        <!-- ✅ 修正：加入中文翻譯 + i18n，支援簡繁切換 -->
                         <p class="label-text" data-i18n="ser-cat-purp">CAREER & LIFE DIRECTION / 職涯與人生方向</p>
                     </div>
                     <div class="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-16">
@@ -324,10 +403,10 @@
                         <div class="text-base font-medium border-l-2 border-slate-200 pl-8"><span data-i18n="ser-d4">從迷惘到方向的轉化</span><span class="text-sm uppercase tracking-tight text-slate-500 block mt-2 italic font-bold">Transforming confusion into clarity</span></div>
                     </div>
                 </div>
+
                 <div class="service-item flex flex-col md:flex-row justify-between items-start">
                     <div class="md:w-1/3 mb-12 md:mb-0">
                         <h3 class="serif text-4xl italic font-bold mb-4">Expression</h3>
-                        <!-- ✅ 修正：加入中文翻譯 + i18n，支援簡繁切換 -->
                         <p class="label-text" data-i18n="ser-cat-expr">CREATIVITY & EXPRESSIVE APPROACHES / 創造力與表達取向</p>
                     </div>
                     <div class="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-16">
@@ -339,7 +418,7 @@
         </div>
     </section>
 
-    <!-- Formats -->
+    <!-- FORMATS -->
     <section id="formats" class="py-40 px-10 md:px-24 bg-[#fafafa]">
         <div class="max-w-6xl mx-auto reveal">
             <div class="mb-24 flex flex-col md:flex-row justify-between items-end border-b border-slate-200 pb-10">
@@ -351,6 +430,7 @@
                     <p class="text-base text-slate-500 leading-relaxed italic" data-i18n="fmt-intro">針對不同的需求與目標，提供量身定制的支持管道。</p>
                 </div>
             </div>
+
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
                 <div class="format-item rounded-2xl group flex flex-col items-start">
                     <div class="w-full flex justify-between items-start mb-12">
@@ -370,6 +450,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="format-item rounded-2xl group flex flex-col items-start">
                     <div class="w-full flex justify-between items-start mb-12">
                         <span class="serif text-5xl italic text-slate-200 group-hover:text-black transition-colors duration-500">02.</span>
@@ -389,13 +470,16 @@
                     </div>
                 </div>
             </div>
-            <div class="mt-20 text-center">
-                <p class="text-lg md:text-xl font-bold tracking-tight text-slate-400 italic serif">No diagnosis, no labeling — only understanding and growth.</p>
+
+            <div class="mt-20 text-center max-w-4xl mx-auto">
+                <p class="text-lg md:text-xl font-bold tracking-tight text-slate-400 italic serif" data-i18n="footer-boundary">
+                    Coaching & peer scaffolding — not psychotherapy. When needed, we refer.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer id="contact" class="py-40 px-10 md:px-24 border-t border-slate-100">
         <div class="max-w-6xl mx-auto reveal">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-32">
@@ -424,15 +508,22 @@
                 'nav-bg': 'Who We Are',
                 'nav-philosophy': 'Our Stance',
                 'nav-whom': 'Who We Serve',
+                'nav-method': 'The LP Method',
                 'nav-services': 'What We Offer',
                 'nav-formats': 'How We Support',
                 'nav-contact': 'CONNECT WITH US',
                 'nav-contact-footer': 'Connect<br>with Us',
+
+                'hero-pill-zh': 'Recovery 恢復 × Renewal 更新 · 2R–4T',
+                'hero-pill-en': 'Directional progress under real constraints.',
+
                 'hero-slogan-zh': '在迷惘中找到方向<br>在困境中重建力量<br>陪你走向更有意義的人生',
                 'hero-slogan-en': 'Finding direction in uncertainty.<br>Rebuilding strength in challenge.<br>Accompanying your journey toward a meaningful life.',
+
                 'hero-name': '焦恩臨 教授 / Professor Chiao, En-Ling',
                 'hero-title1': '創辦主任＆首席教練',
-                'hero-title2': '意義與潛能架構師',
+                'hero-title2': '方向與意義架構師',
+
                 'edu-uga': '資優與創造力教育碩士',
                 'edu-cgu': '正向發展心理學碩士、博士',
                 'thesis-label': 'THESIS & DISSERTATION / 碩博士論文',
@@ -443,6 +534,36 @@
                 'mentor1': 'Co-founder of Positive Psychology & Father of Flow',
                 'mentor2': 'Director, Quality of Life Research Center',
                 'mentor3': 'Director, Torrance Center for Creative Studies and Talent Development',
+
+                'philosophy-title': 'Our Stance',
+                'philosophy-p1': '我們不以誇大的保證作為承諾，而是專注於可持續的成長與真實的進展。',
+                'philosophy-p2': '我們相信生命的發展是方向性的，而非保證的結果；',
+                'philosophy-p3': '逆境與不確定不是要被消除的暫時障礙，而是成長結構的一部分。',
+                'philosophy-p4': '我們的角色是陪伴你在現實的約束中，持續校準、恢復、更新，<br>一步一步朝向更成熟、更具意義的生命歷程。',
+                'philosophy-boundary-zh': '我們提供教練式支持與同儕支撐，不提供心理治療或精神醫療；若有嚴重困擾，建議轉介至合格專業。',
+                'philosophy-p1-en': 'Rather than offering exaggerated guarantees, we focus on sustainable growth and real progress.',
+                'philosophy-p2-en': 'We believe that development is directional, not a guaranteed outcome;',
+                'philosophy-p3-en': 'Adversity and uncertainty are not temporary obstacles to be eliminated, but integral parts of the structure of growth.',
+                'philosophy-p4-en': 'Our role is to accompany you within the constraints of reality, continuously calibrating, recovering, and renewing, step by step toward a more mature and meaningful life journey.',
+                'philosophy-boundary-en': 'We provide coaching and peer support—not psychotherapy or psychiatric care. For severe distress, we recommend referral to licensed professionals.',
+
+                'coach-title': 'PEER SUPPORT & COACHING / 學生教練團隊',
+                'coach-intro': '我們的學生教練經過專業課程訓練，提供「微支撐」式同儕支持（不做心理治療）。<br><span class="text-sm not-italic opacity-70 mt-2 block font-medium">Our student coaches provide peer-based micro-support (not psychotherapy).</span>',
+                'coach1-name': '陳同學 / Chen, Xiao-Ming',
+                'coach1-edu1': '/ 相關修課背景：正向心理學、創造力',
+                'coach1-edu2': '/ 正向心理學與創造力專題實務訓練',
+                'coach1-service': '強項 × 微轉向',
+                'coach1-micro': 'Transparency + Transition',
+                'coach1-service-en': 'Strengths Micro-support',
+                'coach2-name': '林同學 / Lin, Sarah',
+                'coach2-edu1': '/ 相關修課背景：正向藝術/音樂治療、心理諮商與治療概論',
+                'coach2-edu2': '/ 正向藝術/音樂治療、心理諮商與治療概論專題實務訓練',
+                'coach2-service': '表達 × 看見',
+                'coach2-micro': 'Transparency + Togetherness',
+                'coach2-service-en': 'Expressive Micro-support',
+                'coach-bg-label': 'BACKGROUND & TRAINING / 專業背景與訓練',
+                'coach-ser-label': 'CORE SERVICE / 提供服務',
+
                 'whom-title': '適合想突破自我、探索人生方向與意義的學生',
                 'whom-subtitle': 'Suitable for students seeking personal breakthroughs, direction, and meaning in life.',
                 'whom-1': '希望更了解自己與自身強項的學生',
@@ -453,14 +574,32 @@
                 'whom-en-3': 'Students seeking to cultivate creativity, authentic self-expression, and intrinsic motivation',
                 'whom-4': '希望在現實挑戰中持續前行、從僅僅生存走向更有韌性與意義的生命歷程的學生',
                 'whom-en-4': 'Students who wish to keep moving forward amid real-life challenges, moving from mere survival to a life journey with greater resilience and meaning',
-                'ser-subtitle': '支持與發展面向 / AREAS OF SUPPORT',
 
-                /* ✅ 新增：四個分類標籤（簡繁切換） */
+                'method-title': 'The LP Method',
+                'method-subtitle': '一個簡單流程：先定位，再前進（不靠硬撐）。',
+                'method-subtitle-en': 'A simple flow: locate first, then move—without brute forcing.',
+
+                'method-s1-title': '2R 定位（Recovery 恢復 · Renewal 更新）',
+                'method-s1-desc': '你現在更需要「恢復」（減輕壓力/穩住）還是「更新」（重建方向/活出價值）？兩者可並行，但先看張力。',
+                'method-s1-en': 'Do you need more Recovery (relieve stress / stabilize) or Renewal (rebuild direction / live your values) right now? They can co-exist—start by noticing the tension.',
+
+                'method-s2-title': '4T 卡點（Transparency 通透 · Transformation 轉化 · Transition 轉向 · Togetherness 同行）',
+                'method-s2-desc': '你卡在哪裡：看不清（通透）、鬆動不了（轉化）、做不到（轉向）、沒支撐（同行）？',
+                'method-s2-en': 'Where are you stuck: can’t see clearly (Transparency), can’t shift internally (Transformation), can’t carry it out (Transition), or lack support (Togetherness)?',
+
+                'method-s3-title': '微支撐前進',
+                'method-s3-desc': '不追求「立刻變好」。我們設計一個可做到的小步驟，並用關係與環境把它撐住。',
+                'method-s3-en': 'We don’t aim for “getting better immediately.” We design one doable next step—and let relationships and environment hold it in place.',
+
+                'method-boundary-title': 'BOUNDARY / 界線',
+                'method-boundary-desc': '學生教練提供同儕「微支撐」支持；若涉及嚴重焦慮/憂鬱、創傷、失眠失控、自傷意念等，我們會優先建議轉介到校方或合格心理專業。',
+                'method-boundary-en': 'Student coaches provide peer-based micro-support. If concerns involve severe anxiety or depression, trauma, uncontrolled insomnia, or self-harm ideation, we prioritize referral to university services or licensed mental health professionals.',
+
+                'ser-subtitle': '支持與發展面向 / AREAS OF SUPPORT',
                 'ser-cat-cult': 'FORMATION & MATURATION / 生命塑形與成熟',
                 'ser-cat-conn': 'RELATIONSHIPS & LIFE ISSUES / 人際與生活議題',
                 'ser-cat-purp': 'CAREER & LIFE DIRECTION / 職涯與人生方向',
                 'ser-cat-expr': 'CREATIVITY & EXPRESSIVE APPROACHES / 創造力與表達取向',
-
                 'ser-w1': '品格強項與潛能探索',
                 'ser-w2': '自我認同與人生意義',
                 'ser-w3': '在不確定中培育的韌性與內在資源',
@@ -475,6 +614,7 @@
                 'ser-d4': '從迷惘到方向的轉化',
                 'ser-e1': '正向藝術/音樂表達',
                 'ser-e2': '創造力探索與生命敘事',
+
                 'fmt-subtitle': '輔導模式 / COACHING MODALITIES',
                 'fmt-intro': '針對不同的需求與目標，提供量身定制的支持管道。',
                 'fmt-1-title': '個人教練陪伴',
@@ -485,44 +625,33 @@
                 'fmt-2-tag': 'GROWTH GROUPS & WORKSHOPS',
                 'fmt-2-desc': '在安全、支持的團體環境中，<br>透過分享經驗與集體創作，學習共感與連結，在彼此鼓勵下共同探索核心價值與潛能。',
                 'fmt-2-en': 'Within a safe and supportive group setting, learn empathy and connection through shared experiences and collective creation, growing together while exploring your core values and potential.',
-                'coach-title': 'PEER SUPPORT & COACHING / 學生教練團隊',
-                'coach-intro': '我們的學生教練經過專業課程訓練，協助同儕在學習與生活中找到支撐力量。<br><span class="text-sm not-italic opacity-70 mt-2 block font-medium">Our student coaches are professionally trained to support peers through life and academic challenges.</span>',
-                'coach1-name': '陳同學 / Chen, Xiao-Ming',
-                'coach1-edu1': '/ 相關修課背景：正向心理學、創造力',
-                'coach1-edu2': '/ 正向心理學與創造力專題實務訓練',
-                'coach1-service': '品格強項與潛能探索',
-                'coach2-name': '林同學 / Lin, Sarah',
-                'coach2-edu1': '/ 相關修課背景：正向藝術/音樂治療、心理諮商與治療概論',
-                'coach2-edu2': '/ 正向藝術/音樂治療、心理諮商與治療概論專題實務訓練',
-                'coach2-service': '正向藝術/音樂表達',
-                'coach-bg-label': 'BACKGROUND & TRAINING / 專業背景與訓練',
-                'coach-ser-label': 'CORE SERVICE / 提供服務',
-                'philosophy-title': 'Our Stance',
-                'philosophy-p1': '我們不以誇大的保證作為承諾，而是專注於可持續的成長與真實的進展。',
-                'philosophy-p2': '我們相信生命的發展是方向性的，而非保證的結果；',
-                'philosophy-p3': '逆境與不確定不是要被消除的暫時障礙，而是成長結構的一部分。',
-                'philosophy-p4': '我們的角色是陪伴你在現實的約束中，持續校準、恢復、更新，<br>一步一步朝向更成熟、更具意義的生命歷程。',
-                'philosophy-p1-en': 'Rather than offering exaggerated guarantees, we focus on sustainable growth and real progress.',
-                'philosophy-p2-en': 'We believe that development is directional, not a guaranteed outcome;',
-                'philosophy-p3-en': 'Adversity and uncertainty are not temporary obstacles to be eliminated, but integral parts of the structure of growth.',
-                'philosophy-p4-en': 'Our role is to accompany you within the constraints of reality, continuously calibrating, recovering, and renewing, step by step toward a more mature and meaningful life journey.',
+
+                'footer-boundary': 'Coaching & peer scaffolding — not psychotherapy. When needed, we refer.',
                 'foot-quote': '尋找生命的進程<br>每一段迷惘、每一次倒退，都是生命校準的伏筆',
                 'foot-cta': 'Schedule a Coaching Session!'
             },
+
             'zh-hans': {
                 'nav-subtitle': '生命进程中心',
                 'nav-bg': 'Who We Are',
                 'nav-philosophy': 'Our Stance',
                 'nav-whom': 'Who We Serve',
+                'nav-method': 'The LP Method',
                 'nav-services': 'What We Offer',
                 'nav-formats': 'How We Support',
                 'nav-contact': 'CONNECT WITH US',
                 'nav-contact-footer': 'Connect<br>with Us',
+
+                'hero-pill-zh': 'Recovery 恢复 × Renewal 更新 · 2R–4T',
+                'hero-pill-en': 'Directional progress under real constraints.',
+
                 'hero-slogan-zh': '在迷惘中找到方向<br>在困境中重建力量<br>陪你走向更有意义的人生',
                 'hero-slogan-en': 'Finding direction in uncertainty.<br>Rebuilding strength in challenge.<br>Accompanying your journey toward a meaningful life.',
+
                 'hero-name': '焦恩临 教授 / Professor Chiao, En-Ling',
                 'hero-title1': '创办主任＆首席教练',
-                'hero-title2': '意义与潜能架构师',
+                'hero-title2': '方向与意义架构师',
+
                 'edu-uga': '资优与创造力教育硕士',
                 'edu-cgu': '正向发展心理学硕士、博士',
                 'thesis-label': 'THESIS & DISSERTATION / 硕博士论文',
@@ -533,6 +662,36 @@
                 'mentor1': 'Co-founder of Positive Psychology & Father of Flow',
                 'mentor2': 'Director, Quality of Life Research Center',
                 'mentor3': 'Director, Torrance Center for Creative Studies and Talent Development',
+
+                'philosophy-title': 'Our Stance',
+                'philosophy-p1': '我们不以夸大的保证作为承诺，而是专注于可持续的成长与真实的进展。',
+                'philosophy-p2': '我们相信生命的发展是方向性的，而非保证的结果；',
+                'philosophy-p3': '逆境与不确定不是要被消除的暂时障碍，而是成长结构的一部分。',
+                'philosophy-p4': '我们的角色是陪伴你在现实的约束中，持续校准、恢复、更新，<br>一步一步朝向更成熟、更具意义的生命历程。',
+                'philosophy-boundary-zh': '我们提供教练式支持与同侪支撑，不提供心理治疗或精神医疗；若有严重困扰，建议转介至合格专业。',
+                'philosophy-p1-en': 'Rather than offering exaggerated guarantees, we focus on sustainable growth and real progress.',
+                'philosophy-p2-en': 'We believe that development is directional, not a guaranteed outcome;',
+                'philosophy-p3-en': 'Adversity and uncertainty are not temporary obstacles to be eliminated, but integral parts of the structure of growth.',
+                'philosophy-p4-en': 'Our role is to accompany you within the constraints of reality, continuously calibrating, recovering, and renewing, step by step toward a more mature and meaningful life journey.',
+                'philosophy-boundary-en': 'We provide coaching and peer support—not psychotherapy or psychiatric care. For severe distress, we recommend referral to licensed professionals.',
+
+                'coach-title': 'PEER SUPPORT & COACHING / 学生教练团队',
+                'coach-intro': '我们的学生教练经过专业课程训练，提供「微支撑」式同侪支持（不做心理治疗）。<br><span class="text-sm not-italic opacity-70 mt-2 block font-medium">Our student coaches provide peer-based micro-support (not psychotherapy).</span>',
+                'coach1-name': '陈同学 / Chen, Xiao-Ming',
+                'coach1-edu1': '/ 相关修课背景：正向心理学、创造力',
+                'coach1-edu2': '/ 正向心理学与创造力专题实务训练',
+                'coach1-service': '强项 × 微转向',
+                'coach1-micro': 'Transparency + Transition',
+                'coach1-service-en': 'Strengths Micro-support',
+                'coach2-name': '林同学 / Lin, Sarah',
+                'coach2-edu1': '/ 相关修课背景：正向艺术/音乐治疗、心理咨询与治疗概论',
+                'coach2-edu2': '/ 正向艺术/音乐治疗、心理咨询与治疗概论专题实务训练',
+                'coach2-service': '表达 × 看见',
+                'coach2-micro': 'Transparency + Togetherness',
+                'coach2-service-en': 'Expressive Micro-support',
+                'coach-bg-label': 'BACKGROUND & TRAINING / 专业背景与训练',
+                'coach-ser-label': 'CORE SERVICE / 提供服务',
+
                 'whom-title': '适合想突破自我、探索人生方向与意义的学生',
                 'whom-subtitle': 'Suitable for students seeking personal breakthroughs, direction, and meaning in life.',
                 'whom-1': '希望更了解自己与自身强项的学生',
@@ -543,14 +702,32 @@
                 'whom-en-3': 'Students seeking to cultivate creativity, authentic self-expression, and intrinsic motivation',
                 'whom-4': '希望在现实挑战中持续前行、从仅仅生存走向更有韧性与意义的生命历程的学生',
                 'whom-en-4': 'Students who wish to keep moving forward amid real-life challenges, moving from mere survival to a life journey with greater resilience and meaning',
-                'ser-subtitle': '支持与发展面向 / AREAS OF SUPPORT',
 
-                /* ✅ 新增：四個分類標籤（簡繁切換） */
+                'method-title': 'The LP Method',
+                'method-subtitle': '一个简单流程：先定位，再前进（不靠硬撑）。',
+                'method-subtitle-en': 'A simple flow: locate first, then move—without brute forcing.',
+
+                'method-s1-title': '2R 定位（Recovery 恢复 · Renewal 更新）',
+                'method-s1-desc': '你现在更需要「恢复」（减轻压力/稳住）还是「更新」（重建方向/活出价值）？两者可并行，但先看张力。',
+                'method-s1-en': 'Do you need more Recovery (relieve stress / stabilize) or Renewal (rebuild direction / live your values) right now? They can co-exist—start by noticing the tension.',
+
+                'method-s2-title': '4T 卡点（Transparency 通透 · Transformation 转化 · Transition 转向 · Togetherness 同行）',
+                'method-s2-desc': '你卡在哪里：看不清（通透）、鬆動不了（转化）、做不到（转向）、没支撑（同行）？',
+                'method-s2-en': 'Where are you stuck: can’t see clearly (Transparency), can’t shift internally (Transformation), can’t carry it out (Transition), or lack support (Togetherness)?',
+
+                'method-s3-title': '微支撑前进',
+                'method-s3-desc': '不追求「立刻变好」。我们设计一个可做到的小步子，并用关系与环境把它撑住。',
+                'method-s3-en': 'We don’t aim for “getting better immediately.” We design one doable next step—and let relationships and environment hold it in place.',
+
+                'method-boundary-title': 'BOUNDARY / 界线',
+                'method-boundary-desc': '学生教练提供同侪「微支撑」支持；若涉及严重焦虑/抑郁、创伤、失眠失控、自伤意念等，我们会优先建议转介到校方或合格心理专业。',
+                'method-boundary-en': 'Student coaches provide peer-based micro-support. If concerns involve severe anxiety or depression, trauma, uncontrolled insomnia, or self-harm ideation, we prioritize referral to university services or licensed mental health professionals.',
+
+                'ser-subtitle': '支持与发展面向 / AREAS OF SUPPORT',
                 'ser-cat-cult': 'FORMATION & MATURATION / 生命塑形与成熟',
                 'ser-cat-conn': 'RELATIONSHIPS & LIFE ISSUES / 人际与生活议题',
                 'ser-cat-purp': 'CAREER & LIFE DIRECTION / 职涯与人生方向',
                 'ser-cat-expr': 'CREATIVITY & EXPRESSIVE APPROACHES / 创造力与表达取向',
-
                 'ser-w1': '品格强项与潜能探索',
                 'ser-w2': '自我认同与人生意义',
                 'ser-w3': '在不确定中培育的韧性与内在资源',
@@ -565,6 +742,7 @@
                 'ser-d4': '从迷惘到方向的转化',
                 'ser-e1': '正向艺术/音乐表达',
                 'ser-e2': '创造力探索与生命叙事',
+
                 'fmt-subtitle': '辅导模式 / COACHING MODALITIES',
                 'fmt-intro': '针对不同的需求与目标，提供量身定制的支持管道。',
                 'fmt-1-title': '个人教练陪伴',
@@ -573,29 +751,10 @@
                 'fmt-1-en': 'In a safe and trusting one-on-one setting, receive coaching tailored to your traits and needs, supporting you in exploring your core values and potential, while empowering your personal growth and sense of agency.',
                 'fmt-2-title': '成长团体与工作坊',
                 'fmt-2-tag': 'GROWTH GROUPS & WORKSHOPS',
-                'fmt-2-desc': '在安全、支持的团体环境中，<br>透过分享经验与集体创作，学习共感与連結，在彼此鼓励下共同探索核心价值与潜能。',
+                'fmt-2-desc': '在安全、支持的团体环境中，<br>透过分享经验与集体创作，学习共感与连结，在彼此鼓励下共同探索核心价值与潜能。',
                 'fmt-2-en': 'Within a safe and supportive group setting, learn empathy and connection through shared experiences and collective creation, growing together while exploring your core values and potential.',
-                'coach-title': 'PEER SUPPORT & COACHING / 学生教练团队',
-                'coach-intro': '我们的学生教练经过专业课程训练，协助同儕在学习与生活中找到支撑力量。<br><span class="text-sm not-italic opacity-70 mt-2 block font-medium">Our student coaches are professionally trained to support peers through life and academic challenges.</span>',
-                'coach1-name': '陈同学 / Chen, Xiao-Ming',
-                'coach1-edu1': '/ 相关修课背景：正向心理学、创造力',
-                'coach1-edu2': '/ 正向心理学与创造力专题实务训练',
-                'coach1-service': '品格强项与潜能探索',
-                'coach2-name': '林同学 / Lin, Sarah',
-                'coach2-edu1': '/ 相关修课背景：正向艺术/音乐治疗、心理咨询与治疗概论',
-                'coach2-edu2': '/ 正向艺术/音乐治疗、心理咨询与治疗概论专题实务训练',
-                'coach2-service': '正向艺术/音乐表达',
-                'coach-bg-label': 'BACKGROUND & TRAINING / 专业背景与训练',
-                'coach-ser-label': 'CORE SERVICE / 提供服务',
-                'philosophy-title': 'Our Stance',
-                'philosophy-p1': '我们不以夸大的保证作为承诺，而是专注于可持续的成长与真实的进展。',
-                'philosophy-p2': '我们相信生命的发展是方向性的，而非保证的结果；',
-                'philosophy-p3': '逆境与不确定不是要被消除的暂时障碍，而是成长结构的一部分。',
-                'philosophy-p4': '我们的角色是陪伴你在现实的约束中，持续校准、恢复、更新，<br>一步一步朝向更成熟、更具意义的生命历程。',
-                'philosophy-p1-en': 'Rather than offering exaggerated guarantees, we focus on sustainable growth and real progress.',
-                'philosophy-p2-en': 'We believe that development is directional, not a guaranteed outcome;',
-                'philosophy-p3-en': 'Adversity and uncertainty are not temporary obstacles to be eliminated, but integral parts of the structure of growth.',
-                'philosophy-p4-en': 'Our role is to accompany you within the constraints of reality, continuously calibrating, recovering, and renewing, step by step toward a more mature and meaningful life journey.',
+
+                'footer-boundary': 'Coaching & peer scaffolding — not psychotherapy. When needed, we refer.',
                 'foot-quote': '寻找生命的进程<br>每一段迷惘、每一次倒退，都是生命校准的伏笔',
                 'foot-cta': 'Schedule a Coaching Session!'
             }
@@ -624,11 +783,12 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             switchLang('zh-hans');
+
             const navLinks = document.querySelectorAll('.nav-link');
             navLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
                     const targetId = link.getAttribute('href');
-                    if (targetId.startsWith('#')) {
+                    if (targetId && targetId.startsWith('#')) {
                         e.preventDefault();
                         const targetElement = document.querySelector(targetId);
                         if (targetElement) {
@@ -636,6 +796,9 @@
                             const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
                             window.scrollTo({ top: targetPosition, behavior: 'smooth' });
                             history.pushState(null, null, targetId);
+
+                            // close mobile menu on click
+                            document.getElementById('mobile-menu').classList.remove('active');
                         }
                     }
                 });

@@ -6,18 +6,64 @@
     <title>生命進程中心｜Life Progress Center</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts removed: use local Playfair Display files in /fonts for stable loading in Mainland China. -->
     <style>
+        /*
+           LOCAL FONT SETUP
+           Put these files in the same folder level as this HTML file:
+
+           /fonts/PlayfairDisplay-Regular.woff2
+           /fonts/PlayfairDisplay-Bold.woff2
+           /fonts/PlayfairDisplay-Italic.woff2
+           /fonts/PlayfairDisplay-BoldItalic.woff2
+
+           This prevents the hero title from becoming thin when Google Fonts is blocked or unstable.
+        */
+        @font-face {
+            font-family: "PlayfairLocal";
+            src: url("./fonts/PlayfairDisplay-Regular.woff2") format("woff2");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "PlayfairLocal";
+            src: url("./fonts/PlayfairDisplay-Bold.woff2") format("woff2");
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "PlayfairLocal";
+            src: url("./fonts/PlayfairDisplay-Italic.woff2") format("woff2");
+            font-weight: 400;
+            font-style: italic;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "PlayfairLocal";
+            src: url("./fonts/PlayfairDisplay-BoldItalic.woff2") format("woff2");
+            font-weight: 700;
+            font-style: italic;
+            font-display: swap;
+        }
+
         :root { --bg: #ffffff; --text: #1a1a1a; --subtext: #4b5563; --border: #e5e7eb; }
-        body { font-family: 'Noto Sans SC', 'Noto Sans TC', sans-serif; background-color: var(--bg); color: var(--text); scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+        body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', 'Microsoft JhengHei', 'PingFang SC', 'PingFang TC', 'Noto Sans SC', 'Noto Sans TC', Arial, sans-serif; background-color: var(--bg); color: var(--text); scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
         section { scroll-margin-top: 100px; }
-        .serif { font-family: 'Playfair Display', serif; }
+        .serif { font-family: 'PlayfairLocal', Georgia, 'Times New Roman', serif; }
         .reveal { opacity: 0; transform: translateY(40px); transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
         .nav-blur { backdrop-filter: blur(12px); background-color: rgba(255, 255, 255, 0.9); }
         .service-item { border-bottom: 1px solid var(--border); padding: 3.5rem 0; transition: all 0.4s ease; }
         .service-item:hover { padding-left: 1.5rem; border-bottom-color: var(--text); }
-        .hero-text { line-height: 1.1; letter-spacing: -0.02em; }
+        .hero-text { line-height: 1.05; letter-spacing: -0.02em; font-family: 'PlayfairLocal', Georgia, 'Times New Roman', serif; font-weight: 700; }
+        .hero-text span { font-family: 'PlayfairLocal', Georgia, 'Times New Roman', serif; font-weight: 700; font-style: italic; }
+        #hero { padding-top: 12rem !important; }
+        @media (min-width: 768px) { #hero { padding-top: 11rem !important; } }
         .lang-switch { font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; cursor: pointer; transition: all 0.3s; padding: 6px 10px; }
         .lang-switch:hover { opacity: 0.5; }
         .lang-active { border-bottom: 2px solid black; }
@@ -83,9 +129,9 @@
     </div>
 
     <!-- HERO -->
-    <section id="hero" class="min-h-screen flex flex-col justify-center px-10 md:px-24 pt-20">
+    <section id="hero" class="min-h-screen flex flex-col justify-center px-10 md:px-24">
         <div class="max-w-7xl reveal">
-            <h1 class="hero-text serif text-[12vw] md:text-[9vw] font-bold mb-10">
+            <h1 class="hero-text serif text-[11vw] md:text-[8.4vw] font-bold mb-10">
                 Making Progress<br>
                 <span class="italic text-slate-400">In the Midst of Life</span>
             </h1>

@@ -87,6 +87,37 @@
         .lp-card:hover { border-color: #000; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
         .pill { display: inline-flex; align-items: center; gap: .5rem; border: 1px solid #e5e7eb; padding: .5rem .85rem; border-radius: 999px; font-weight: 700; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #111827; background: #fff; }
         .micro-tag { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 800; color: #0f172a; background: #f8fafc; border: 1px solid #e2e8f0; padding: .35rem .6rem; border-radius: 999px; }
+
+        /* LP Method term boxes: keep each English-Chinese concept together.
+           Example: [Transparency 通透]. Boxes can wrap as units on mobile, but words do not split. */
+        .method-heading { word-break: normal; overflow-wrap: normal; line-height: 1.35; }
+        .method-title-main { display: block; margin-bottom: .55rem; }
+        .term-list { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; word-break: keep-all; overflow-wrap: normal; }
+        .term-pair {
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+            word-break: keep-all;
+            overflow-wrap: normal;
+            flex: 0 0 auto;
+            border: 1px solid #e5e7eb;
+            border-radius: 999px;
+            padding: .38rem .72rem;
+            background: #f8fafc;
+            color: #111827;
+            font-size: .9rem;
+            font-weight: 800;
+            letter-spacing: .01em;
+        }
+        .cn-term, .nowrap { display: inline-flex; white-space: nowrap; word-break: keep-all; overflow-wrap: normal; }
+        .term-dot { display: none; }
+        @media (max-width: 640px) {
+            .lp-card { padding: 1.5rem; }
+            .method-heading { font-size: 1.35rem; line-height: 1.35; }
+            .method-title-main { margin-bottom: .6rem; }
+            .term-list { gap: .4rem; }
+            .term-pair { font-size: .82rem; padding: .32rem .62rem; }
+        }
     </style>
 </head>
 <body data-lang="zh-hans">
@@ -137,7 +168,7 @@
             </h1>
 
             <div class="mb-12 flex flex-wrap gap-3 items-center">
-                <span class="pill" data-i18n="hero-pill-zh">Recovery 恢復 × Renewal 更新 · 2R–4T</span>
+                <span class="pill" data-i18n="hero-pill-zh">Recovery 恢復 × Renewal 更新</span>
                 <span class="text-sm text-slate-500 italic serif" data-i18n="hero-pill-en">Directional progress under real constraints.</span>
             </div>
 
@@ -361,9 +392,9 @@
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
                 <div class="lp-card rounded-2xl">
                     <p class="label-text mb-4">STEP 1</p>
-                    <h3 class="text-2xl font-bold mb-4" data-i18n="method-s1-title">2R 定位（Recovery 恢復 · Renewal 更新）</h3>
+                    <h3 class="method-heading text-2xl font-bold mb-4" data-i18n="method-s1-title"><span class="method-title-main">2R 定位</span><span class="term-list"><span class="term-pair">Recovery 恢復</span><span class="term-dot">·</span><span class="term-pair">Renewal 更新</span></span></h3>
                     <p class="text-base leading-relaxed text-slate-700" data-i18n="method-s1-desc">
-                        你现在更需要「恢复」（减轻压力/稳住）还是「更新」（重建方向/活出价值）？两者可并行，但先看张力。
+                        你现在更需要「<span class="cn-term">恢复</span>」（减轻压力/稳住）还是「<span class="cn-term">更新</span>」（重建方向/活出价值）？两者可并行，但先看张力。
                     </p>
                     <p class="text-sm italic serif text-slate-500 leading-relaxed mt-4" data-i18n="method-s1-en">
                         Do you need more Recovery (relieve stress / stabilize) or Renewal (rebuild direction / live your values) right now? They can co-exist—start by noticing the tension.
@@ -372,9 +403,9 @@
 
                 <div class="lp-card rounded-2xl">
                     <p class="label-text mb-4">STEP 2</p>
-                    <h3 class="text-2xl font-bold mb-4" data-i18n="method-s2-title">4T 卡点（Transparency 通透 · Transformation 转化 · Transition 转向 · Togetherness 同行）</h3>
+                    <h3 class="method-heading text-2xl font-bold mb-4" data-i18n="method-s2-title"><span class="method-title-main">4T 卡点</span><span class="term-list"><span class="term-pair">Transparency 通透</span><span class="term-dot">·</span><span class="term-pair">Transformation 转化</span><span class="term-dot">·</span><span class="term-pair">Transition 前进</span><span class="term-dot">·</span><span class="term-pair">Togetherness 同行</span></span></h3>
                     <p class="text-base leading-relaxed text-slate-700" data-i18n="method-s2-desc">
-                        你卡在哪里：看不清（通透）、鬆動不了（转化）、做不到（转向）、没支撑（同行）？
+                        你卡在哪里：看不清（<span class="cn-term">通透</span>）、鬆動不了（<span class="cn-term">转化</span>）、做不到（<span class="cn-term">前进</span>）、没支撑（<span class="cn-term">同行</span>）？
                     </p>
                     <p class="text-sm italic serif text-slate-500 leading-relaxed mt-4" data-i18n="method-s2-en">
                         Where are you stuck: can’t see clearly (Transparency), can’t shift internally (Transformation), can’t carry it out (Transition), or lack support (Togetherness)?
@@ -569,7 +600,7 @@
                 'nav-contact': 'CONNECT WITH US',
                 'nav-contact-footer': 'Connect<br>with Us',
 
-                'hero-pill-zh': 'Recovery 恢復 × Renewal 更新 · 2R–4T',
+                'hero-pill-zh': 'Recovery 恢復 × Renewal 更新',
                 'hero-pill-en': 'Directional progress under real constraints.',
 
                 'hero-slogan-zh': '在迷惘中找到方向<br>在困境中重建力量<br>陪你走向更有意義的人生',
@@ -635,12 +666,12 @@
                 'method-subtitle': '一個簡單流程：先定位，再前進（不靠硬撐）。',
                 'method-subtitle-en': 'A simple flow: locate first, then move—without brute forcing.',
 
-                'method-s1-title': '2R 定位（Recovery 恢復 · Renewal 更新）',
-                'method-s1-desc': '你現在更需要「恢復」（減輕壓力/穩住）還是「更新」（重建方向/活出價值）？兩者可並行，但先看張力。',
+                'method-s1-title': '<span class="method-title-main">2R 定位</span><span class="term-list"><span class="term-pair">Recovery 恢復</span><span class="term-dot">·</span><span class="term-pair">Renewal 更新</span></span>',
+                'method-s1-desc': '你現在更需要「<span class="cn-term">恢復</span>」（減輕壓力/穩住）還是「<span class="cn-term">更新</span>」（重建方向/活出價值）？兩者可並行，但先看張力。',
                 'method-s1-en': 'Do you need more Recovery (relieve stress / stabilize) or Renewal (rebuild direction / live your values) right now? They can co-exist—start by noticing the tension.',
 
-                'method-s2-title': '4T 卡點（Transparency 通透 · Transformation 轉化 · Transition 轉向 · Togetherness 同行）',
-                'method-s2-desc': '你卡在哪裡：看不清（通透）、鬆動不了（轉化）、做不到（轉向）、沒支撐（同行）？',
+                'method-s2-title': '<span class="method-title-main">4T 卡點</span><span class="term-list"><span class="term-pair">Transparency 通透</span><span class="term-dot">·</span><span class="term-pair">Transformation 轉化</span><span class="term-dot">·</span><span class="term-pair">Transition 前進</span><span class="term-dot">·</span><span class="term-pair">Togetherness 同行</span></span>',
+                'method-s2-desc': '你卡在哪裡：看不清（<span class="cn-term">通透</span>）、鬆動不了（<span class="cn-term">轉化</span>）、做不到（<span class="cn-term">前進</span>）、沒支撐（<span class="cn-term">同行</span>）？',
                 'method-s2-en': 'Where are you stuck: can’t see clearly (Transparency), can’t shift internally (Transformation), can’t carry it out (Transition), or lack support (Togetherness)?',
 
                 'method-s3-title': '微支撐前進',
@@ -702,7 +733,7 @@
                 'nav-contact': 'CONNECT WITH US',
                 'nav-contact-footer': 'Connect<br>with Us',
 
-                'hero-pill-zh': 'Recovery 恢复 × Renewal 更新 · 2R–4T',
+                'hero-pill-zh': 'Recovery 恢复 × Renewal 更新',
                 'hero-pill-en': 'Directional progress under real constraints.',
 
                 'hero-slogan-zh': '在迷惘中找到方向<br>在困境中重建力量<br>陪你走向更有意义的人生',
@@ -771,12 +802,12 @@
                 'method-subtitle': '一个简单流程：先定位，再前进（不靠硬撑）。',
                 'method-subtitle-en': 'A simple flow: locate first, then move—without brute forcing.',
 
-                'method-s1-title': '2R 定位（Recovery 恢复 · Renewal 更新）',
-                'method-s1-desc': '你现在更需要「恢复」（减轻压力/稳住）还是「更新」（重建方向/活出价值）？两者可并行，但先看张力。',
+                'method-s1-title': '<span class="method-title-main">2R 定位</span><span class="term-list"><span class="term-pair">Recovery 恢复</span><span class="term-dot">·</span><span class="term-pair">Renewal 更新</span></span>',
+                'method-s1-desc': '你现在更需要「<span class="cn-term">恢复</span>」（减轻压力/稳住）还是「<span class="cn-term">更新</span>」（重建方向/活出价值）？两者可并行，但先看张力。',
                 'method-s1-en': 'Do you need more Recovery (relieve stress / stabilize) or Renewal (rebuild direction / live your values) right now? They can co-exist—start by noticing the tension.',
 
-                'method-s2-title': '4T 卡点（Transparency 通透 · Transformation 转化 · Transition 转向 · Togetherness 同行）',
-                'method-s2-desc': '你卡在哪里：看不清（通透）、鬆動不了（转化）、做不到（转向）、没支撑（同行）？',
+                'method-s2-title': '<span class="method-title-main">4T 卡点</span><span class="term-list"><span class="term-pair">Transparency 通透</span><span class="term-dot">·</span><span class="term-pair">Transformation 转化</span><span class="term-dot">·</span><span class="term-pair">Transition 前进</span><span class="term-dot">·</span><span class="term-pair">Togetherness 同行</span></span>',
+                'method-s2-desc': '你卡在哪里：看不清（<span class="cn-term">通透</span>）、鬆動不了（<span class="cn-term">转化</span>）、做不到（<span class="cn-term">前进</span>）、没支撑（<span class="cn-term">同行</span>）？',
                 'method-s2-en': 'Where are you stuck: can’t see clearly (Transparency), can’t shift internally (Transformation), can’t carry it out (Transition), or lack support (Togetherness)?',
 
                 'method-s3-title': '微支撑前进',

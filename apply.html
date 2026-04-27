@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Apply to Be a Life Progress Coach</title>
+
+<style>
+:root {
+  --navy: #102a43;
+  --deep-blue: #1f3b57;
+  --teal: #2a9d8f;
+  --gold: #e6a817;
+  --cream: #fff8ed;
+  --white: #ffffff;
+  --text: #1f2933;
+  --muted: #5b6770;
+  --border: #e6ddd2;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background: var(--cream);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+header {
+  background: linear-gradient(135deg, var(--navy), var(--deep-blue));
+  color: white;
+  padding: 80px 24px;
+  text-align: center;
+}
+
+header .tag {
+  display: inline-block;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-size: clamp(42px, 7vw, 84px);
+  line-height: 1.05;
+  margin: 0 0 24px;
+  font-weight: 800;
+}
+
+header p {
+  max-width: 780px;
+  margin: 0 auto;
+  font-size: 20px;
+  color: #eef4f8;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 72px 24px;
+}
+
+section { margin-bottom: 72px; }
+
+h2 {
+  font-size: 34px;
+  color: var(--navy);
+  margin-bottom: 18px;
+}
+
+h3 {
+  color: var(--deep-blue);
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.intro {
+  font-size: 20px;
+  color: var(--muted);
+  max-width: 900px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 32px;
+  box-shadow: 0 12px 30px rgba(31, 59, 87, 0.08);
+}
+
+.card.highlight { border-top: 6px solid var(--gold); }
+.card.teal { border-top: 6px solid var(--teal); }
+
+ul, ol {
+  padding-left: 22px;
+  margin: 0;
+}
+
+li { margin-bottom: 10px; }
+
+.notice {
+  background: #fff3d8;
+  border-left: 6px solid var(--gold);
+  padding: 24px 28px;
+  border-radius: 16px;
+  font-size: 18px;
+}
+
+.compensation {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.pay-box {
+  background: white;
+  border-radius: 18px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.pay-box strong {
+  display: block;
+  color: var(--gold);
+  font-size: 30px;
+  margin-bottom: 6px;
+}
+
+.step-list {
+  counter-reset: step;
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.step-list li {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 22px 24px 22px 72px;
+  position: relative;
+  box-shadow: 0 8px 22px rgba(31, 59, 87, 0.06);
+}
+
+.step-list li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  left: 22px;
+  top: 22px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+
+.step-list strong { color: var(--navy); }
+
+.cta {
+  text-align: center;
+  background: linear-gradient(135deg, var(--deep-blue), var(--navy));
+  color: white;
+  border-radius: 28px;
+  padding: 56px 28px;
+}
+
+.cta h2 {
+  color: white;
+  margin-top: 0;
+  letter-spacing: 1px;
+}
+
+.cta p {
+  color: #edf3f7;
+  max-width: 720px;
+  margin: 0 auto 28px;
+  font-size: 18px;
+}
+
+.button {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy);
+  text-decoration: none;
+  padding: 16px 32px;
+  border-radius: 999px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  transition: 0.2s ease;
+}
+
+.small {
+  font-size: 14px;
+  color: rgba(255,255,255,0.78);
+  margin-top: 16px;
+}
+
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 780px) {
+  header { padding: 64px 20px; }
+
+  .grid,
+  .compensation {
+    grid-template-columns: 1fr;
+  }
+
+  .container { padding: 56px 20px; }
+
+  .step-list li {
+    padding-left: 24px;
+    padding-top: 70px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="tag">Pilot Cohort · Summer Semester–Fall Semester 2026</div>
+  <h1>Become a Life Progress Coach</h1>
+  <p>
+    Join the founding pilot cohort of student coaches. Support others, deepen your purpose,
+    and help shape a new model of developmental peer coaching at the College.
+  </p>
+</header>
+
+<main class="container">
+
+  <section>
+    <h2>What is Life Progress Coaching?</h2>
+    <p class="intro">
+      Life Progress Coaches walk alongside peers to listen deeply, ask thoughtful questions,
+      and support meaningful forward movement under real-life constraints.
+    </p>
+    <p class="intro">
+      This is not psychotherapy or counseling. It is a developmental, non-clinical coaching
+      approach focused on meaning, direction, agency, and supportive growth.
+    </p>
+  </section>
+
+  <section>
+    <h2>What You Will Do</h2>
+
+    <div class="grid">
+      <div class="card highlight">
+        <h3>Summer Semester: Training & Development</h3>
+        <ul>
+          <li>Complete the application and a 20-minute interview with the Lead Coach.</li>
+          <li>Participate in a 2-day intensive workshop (16 hours).</li>
+          <li>Learn the LPT framework: Recovery, Renewal, and the 4T model.</li>
+          <li>Engage in real coaching conversations with 5 cases.</li>
+          <li>Review the LPC training materials and provide pilot feedback.</li>
+        </ul>
+      </div>
+
+      <div class="card teal">
+        <h3>Fall Semester: Practice & Implementation</h3>
+        <ul>
+          <li>Continue supervised practice with additional individual clients.</li>
+          <li>Participate in group co-facilitation.</li>
+          <li>Attend LPT Labs and guided practice sessions.</li>
+          <li>Attend supervision meetings with the Lead Coach.</li>
+          <li>Submit session records within 24 hours after each session.</li>
+          <li>Participate in ongoing evaluation and feedback.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Pilot Training & Practice Pathway</h2>
+    <p class="intro">
+      This pilot pathway outlines the training, practice, supervision, and reflection activities
+      planned for the Summer and Fall semesters. Formal certification will depend on the outcomes
+      of the pilot and the future establishment of the Life Progress Center.
+    </p>
+
+    <ol class="step-list">
+      <li>
+        <strong>Application & Interview:</strong>
+        Complete the application and a 20-minute interview with the Lead Coach.
+      </li>
+
+      <li>
+        <strong>2-Day Intensive Workshop:</strong>
+        Participate in a full 16-hour training introducing the LPC approach and core skills.
+      </li>
+
+      <li>
+        <strong>Practice Development:</strong>
+        Engage in real coaching conversations with 5 cases and document the learning process.
+      </li>
+
+      <li>
+        <strong>Supervised Practice:</strong>
+        Continue coaching practice with additional individual clients, group co-facilitation,
+        and ongoing supervision.
+      </li>
+
+      <li>
+        <strong>LPT Labs:</strong>
+        Participate in structured practice sessions to develop coaching skills, structural
+        competency, and peer learning.
+      </li>
+
+      <li>
+        <strong>Competency Development:</strong>
+        Continue building relational, reflective, ethical, and practical coaching capacity
+        through experience and feedback.
+      </li>
+
+      <li>
+        <strong>Reflective Portfolio:</strong>
+        Submit a short reflective writing including learning insights, anonymized experience,
+        and emerging coaching philosophy.
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Who Should Apply?</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>We are looking for students who are:</h3>
+        <ul>
+          <li>Interested in coaching, education, leadership, communication, or personal growth.</li>
+          <li>Strong listeners who are open-minded and reflective.</li>
+          <li>Responsible, reliable, and willing to receive feedback.</li>
+          <li>Able to commit across both Summer and Fall semesters.</li>
+          <li>Open to learning developmental coaching skills in a non-clinical peer support model.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>You do not need to:</h3>
+        <ul>
+          <li>Have all the answers.</li>
+          <li>Have prior coaching experience.</li>
+          <li>Act as a counselor or therapist.</li>
+          <li>Fix other people’s problems.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Pilot Program Note</h2>
+    <div class="notice">
+      This is a pilot program. Participants are not only trainees, but also contributors to
+      the development of the LPC coaching model. You will be expected to provide honest
+      feedback, participate in evaluation activities, and help refine the system for future cohorts.
+    </div>
+  </section>
+
+  <section>
+    <h2>Compensation</h2>
+    <p class="intro">
+      Selected participants will receive a total pilot stipend of <strong>1800 RMB</strong>.
+      The stipend reflects participation, commitment, and contribution to program development and evaluation.
+    </p>
+
+    <div class="compensation">
+      <div class="pay-box">
+        <strong>450 RMB</strong>
+        After Summer Semester training completion
+      </div>
+
+      <div class="pay-box">
+        <strong>450 RMB</strong>
+        At mid-Fall Semester check-in
+      </div>
+
+      <div class="pay-box">
+        <strong>900 RMB</strong>
+        Upon full completion of the pilot program
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="apply">
+    <h2>Apply to Join the Pilot Cohort</h2>
+    <p>
+      Apply for an interview and become part of the founding pilot cohort of Life Progress Coaches at the College.
+    </p>
+
+    <a class="button"
+       href="https://sjtu.feishu.cn/share/base/form/shrcnOmzNv4IK7OPhzquq4eIYtf"
+       target="_blank">
+      Apply for Interview →
+    </a>
+
+    <p class="small">
+      Questions? Contact Dr. En-Ling Chiao · enling.chiao@sjtu.edu.cn
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  Life Progress Lab / Life Progress Center · Pilot Recruitment Page
+</footer>
+
+</body>
+</html>

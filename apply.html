@@ -26,6 +26,9 @@ body {
   background: var(--cream);
   color: var(--text);
   line-height: 1.7;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
 }
 
 header {
@@ -55,10 +58,19 @@ h1 {
 }
 
 header p {
-  max-width: 780px;
+  max-width: min(1040px, 92vw);
   margin: 0 auto;
-  font-size: 20px;
+  font-size: clamp(18px, 1.65vw, 22px);
   color: #eef4f8;
+  line-height: 1.65;
+  text-wrap: balance;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+
+.no-break {
+  white-space: nowrap;
 }
 
 .container {
@@ -232,6 +244,23 @@ footer {
 @media (max-width: 780px) {
   header { padding: 64px 20px; }
 
+  header .tag {
+    font-size: 11px;
+    letter-spacing: 1.4px;
+    line-height: 1.4;
+    max-width: 92vw;
+  }
+
+  h1 {
+    font-size: clamp(42px, 13vw, 64px);
+  }
+
+  header p {
+    max-width: 94vw;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
   .grid,
   .compensation {
     grid-template-columns: 1fr;
@@ -254,7 +283,7 @@ footer {
   <h1>Become a Life Progress Coach</h1>
   <p>
     Join the founding pilot cohort of student coaches. Support others, deepen your sense of purpose,
-    and help shape a new model of developmental peer coaching here at Global College.
+    and help shape a new model of developmental peer coaching here at <span class="no-break">Global College</span>.
   </p>
 </header>
 

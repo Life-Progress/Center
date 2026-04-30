@@ -25,7 +25,8 @@ body {
   font-family: Georgia, "Times New Roman", serif;
   background: var(--cream);
   color: var(--text);
-  line-height: 1.7;
+  font-size: 18px;
+  line-height: 1.75;
   word-break: normal;
   overflow-wrap: normal;
   hyphens: none;
@@ -43,15 +44,15 @@ header .tag {
   background: rgba(255,255,255,0.12);
   border: 1px solid rgba(255,255,255,0.35);
   border-radius: 999px;
-  padding: 8px 18px;
-  font-size: 13px;
+  padding: 9px 20px;
+  font-size: 14px;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 24px;
 }
 
 h1 {
-  font-size: clamp(42px, 7vw, 82px);
+  font-size: clamp(44px, 7vw, 82px);
   line-height: 1.05;
   margin: 0 0 24px;
   font-weight: 800;
@@ -60,9 +61,9 @@ h1 {
 header p {
   max-width: 980px;
   margin: 0 auto;
-  font-size: clamp(18px, 1.65vw, 22px);
+  font-size: clamp(19px, 1.7vw, 23px);
   color: #eef4f8;
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 .no-break { white-space: nowrap; }
@@ -70,40 +71,43 @@ header p {
 .container {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 72px 24px;
+  padding: 76px 24px;
 }
 
-section { margin-bottom: 70px; }
+section { margin-bottom: 74px; }
 
 h2 {
-  font-size: 34px;
+  font-size: 38px;
   color: var(--navy);
-  margin-bottom: 18px;
+  margin-bottom: 22px;
+  line-height: 1.2;
 }
 
 h3 {
   color: var(--deep-blue);
-  font-size: 24px;
-  margin-bottom: 12px;
+  font-size: 26px;
+  margin-bottom: 14px;
+  line-height: 1.25;
 }
 
 .intro {
-  font-size: 20px;
+  font-size: 21px;
   color: var(--muted);
   max-width: 900px;
+  line-height: 1.8;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
+  gap: 30px;
 }
 
 .card {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: 22px;
-  padding: 32px;
+  padding: 36px;
   box-shadow: 0 12px 30px rgba(31, 59, 87, 0.08);
 }
 
@@ -111,18 +115,22 @@ h3 {
 .card.teal { border-top: 6px solid var(--teal); }
 
 ul, ol {
-  padding-left: 22px;
+  padding-left: 24px;
   margin: 0;
 }
 
-li { margin-bottom: 10px; }
+li {
+  margin-bottom: 14px;
+  line-height: 1.7;
+}
 
 .notice {
   background: #fff3d8;
   border-left: 6px solid var(--gold);
-  padding: 24px 28px;
+  padding: 28px 32px;
   border-radius: 16px;
-  font-size: 18px;
+  font-size: 19px;
+  line-height: 1.75;
 }
 
 .notice strong { color: var(--navy); }
@@ -130,21 +138,26 @@ li { margin-bottom: 10px; }
 .pathway {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-  margin-top: 30px;
+  gap: 24px;
+  margin-top: 32px;
 }
 
 .pathway .step {
   background: #ffffff;
   border: 1px solid var(--border);
   border-radius: 20px;
-  padding: 26px;
+  padding: 30px;
   box-shadow: 0 10px 26px rgba(31, 59, 87, 0.07);
 }
 
+.pathway .step p {
+  font-size: 18px;
+  line-height: 1.75;
+}
+
 .step-number {
-  width: 38px;
-  height: 38px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   background: var(--navy);
   color: white;
@@ -152,32 +165,38 @@ li { margin-bottom: 10px; }
   align-items: center;
   justify-content: center;
   font-weight: 800;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
+  font-size: 18px;
 }
 
 .stipend-box {
   background: white;
   border: 1px solid var(--border);
   border-radius: 22px;
-  padding: 34px;
+  padding: 38px;
   box-shadow: 0 12px 30px rgba(31, 59, 87, 0.08);
 }
 
+.stipend-box p {
+  font-size: 19px;
+  line-height: 1.75;
+}
+
 .stipend-amount {
-  font-size: 42px;
+  font-size: 44px;
   color: var(--gold);
   font-weight: 800;
-  margin: 8px 0 8px;
+  margin: 10px 0 12px;
 }
 
 .disclaimer {
   background: #ffffff;
   border: 1px solid var(--border);
   border-radius: 18px;
-  padding: 22px 26px;
+  padding: 26px 30px;
   color: var(--muted);
-  font-size: 15px;
-  line-height: 1.65;
+  font-size: 17px;
+  line-height: 1.75;
 }
 
 .disclaimer strong { color: var(--navy); }
@@ -187,7 +206,7 @@ li { margin-bottom: 10px; }
   background: linear-gradient(135deg, var(--deep-blue), var(--navy));
   color: white;
   border-radius: 28px;
-  padding: 58px 28px;
+  padding: 62px 30px;
 }
 
 .cta h2 {
@@ -198,9 +217,10 @@ li { margin-bottom: 10px; }
 
 .cta p {
   color: #edf3f7;
-  max-width: 720px;
-  margin: 0 auto 28px;
-  font-size: 18px;
+  max-width: 760px;
+  margin: 0 auto 30px;
+  font-size: 19px;
+  line-height: 1.7;
 }
 
 .button {
@@ -208,11 +228,12 @@ li { margin-bottom: 10px; }
   background: var(--gold);
   color: var(--navy);
   text-decoration: none;
-  padding: 16px 32px;
+  padding: 18px 36px;
   border-radius: 999px;
   font-weight: 800;
   letter-spacing: 1px;
   text-transform: uppercase;
+  font-size: 16px;
 }
 
 .button:hover {
@@ -221,23 +242,30 @@ li { margin-bottom: 10px; }
 }
 
 .small {
-  font-size: 14px;
-  color: rgba(255,255,255,0.78);
-  margin-top: 16px;
+  font-size: 15px;
+  color: rgba(255,255,255,0.8);
+  margin-top: 18px;
 }
 
 footer {
   text-align: center;
-  padding: 40px 20px;
+  padding: 42px 20px;
   color: var(--muted);
   border-top: 1px solid var(--border);
+  font-size: 16px;
 }
 
 @media (max-width: 840px) {
-  header { padding: 64px 20px; }
+  body {
+    font-size: 17px;
+  }
+
+  header {
+    padding: 64px 20px;
+  }
 
   header .tag {
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 1.4px;
     line-height: 1.4;
     max-width: 92vw;
@@ -249,8 +277,21 @@ footer {
 
   header p {
     max-width: 94vw;
-    font-size: 18px;
-    line-height: 1.6;
+    font-size: 19px;
+    line-height: 1.65;
+  }
+
+  h2 {
+    font-size: 31px;
+  }
+
+  h3 {
+    font-size: 23px;
+  }
+
+  .intro {
+    font-size: 19px;
+    line-height: 1.75;
   }
 
   .grid,
@@ -258,7 +299,23 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .container { padding: 56px 20px; }
+  .container {
+    padding: 58px 20px;
+  }
+
+  .card,
+  .pathway .step,
+  .stipend-box {
+    padding: 28px;
+  }
+
+  li {
+    margin-bottom: 12px;
+  }
+
+  .stipend-amount {
+    font-size: 38px;
+  }
 }
 </style>
 </head>
@@ -332,8 +389,8 @@ footer {
         <div class="step-number">1</div>
         <h3>Apply & Interview</h3>
         <p>
-          Complete the application form and participate in a 20-minute interview with the Head Coach.
-          The conversation is designed to explore fit for the founding pilot cohort.
+          Complete the application form and participate in a 30–60 minute interview and Q&A conversation
+          with the Head Coach. The conversation is designed to explore fit for the founding pilot cohort.
         </p>
       </div>
 

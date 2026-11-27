@@ -478,6 +478,24 @@ html[lang="en"] .core-en { display: none; }
 }
 .hero-gloss { color: #f1e9d4; margin: -8px 0 13px; font: italic clamp(17px,1.45vw,23px)/1.4 var(--serif); }
 @media (max-width: 680px) { .hero-gloss { margin: -9px 0 12px; font-size: 17px; } }
+.journal-page { max-width: 840px; }
+.journal-page > .journal-intro { max-width: 42em; margin-top: 12px; }
+.journal-page .journal-form { margin-top: 24px; }
+.journal-page .journal-question { margin: 0 0 12px; text-wrap: pretty; }
+#prompt-picker { margin-top: 18px; font-size: 14px; }
+#prompt-picker > summary { width: fit-content; min-height: 40px; color: var(--green); font-weight: 600; }
+#prompt-picker > summary .plus { margin-left: 6px; }
+.journal-topic { border-top: 1px solid var(--line); }
+.journal-topic:last-child { border-bottom: 1px solid var(--line); }
+.journal-topic > summary { padding: 9px 4px; min-height: 44px; }
+.topic-choices { display: grid; gap: 3px; padding: 0 0 8px; }
+.topic-choices button { text-align: left; line-height: 1.6; padding: 10px 14px; min-height: 42px; border-inline-start: 2px solid var(--line); }
+.topic-choices button:hover, .topic-choices button:focus-visible, .topic-choices button[aria-pressed="true"] { border-inline-start-color: #466447; background: #e8ecde; }
+.conversation-card[open] > summary .arrow { --rotation: 90deg; }
+.conversation-card p { max-width: 42em; margin-top: 8px; color: var(--muted); font-size: 15px; }
+#back-to-opening { margin-top: 12px; font-size: 14px; }
+.case-lead + .case-lead { margin-top: .65em; }
+.case-reflection { margin-top: 1em; font-size: 1em; font-weight: 600; }
 </style></head>
 <body id="top">
   <a class="skip-link" href="#main" data-en="Skip to content" data-hant="跳至主要內容">跳至主要内容</a>
@@ -769,99 +787,47 @@ html[lang="en"] .core-en { display: none; }
     </section>
 
     <section class="research wrap" id="research" aria-labelledby="research-title">
-      <div><p class="eyebrow" data-en="Research · An example question" data-hant="學術研究 · 研究問題示例">学术研究 · 研究问题示例</p><h2 id="research-title" data-en="Asking for help felt harder. Was it a step forward?" data-hant="開口求助後更不安，這一步算是進步嗎？">开口求助后更不安，这一步算是进步吗？</h2></div>
-      <div class="case"><p class="case-lead" data-en="Imagine a student who is quick to help a friend but usually says “I can manage” when the roles are reversed. Today, for the first time, he asks a friend for help. He spends the evening wondering whether he has become a burden." data-hant="想像有個學生，朋友有難時他總願意幫忙。輪到自己時，他卻習慣說「我自己來」。今天，他第一次開口向朋友求助。到了晚上，他還在想：「我是不是給朋友添了麻煩？」">想象有个学生，朋友有难时他总愿意帮忙。轮到自己时，他却习惯说“我自己来”。今天，他第一次开口向朋友求助。到了晚上，他还在想：“我是不是给朋友添了麻烦？”</p>
-        <details class="case-details"><summary><span data-en="How could we tell what this step meant?" data-hant="我們可以怎麼研究這一步的意義？">我们可以怎么研究这一步的意义？</span><i class="plus" aria-hidden="true"></i></summary>
-          <ul><li data-en="Why does he gladly care for others and feel guilty about receiving care himself? What reasons does he have for valuing mutual care? Does his friend see it the same way?" data-hant="他為什麼願意照顧別人，自己接受照顧卻會自責？用什麼理由判斷「彼此照顧」值得追求？他和朋友的看法一樣嗎？">他为什么愿意照顾别人，自己接受照顾却会自责？用什么理由判断“彼此照顾”值得追求？他和朋友的看法一样吗？</li><li data-en="Did asking for help express a choice he valued, or did he feel he had no choice? What would he and his friend each say about that moment?" data-hant="這次求助是他認同的選擇，還是當時情勢所迫？他和朋友會怎麼描述那一刻？">这次求助是他认同的选择，还是当时情势所迫？他和朋友会怎么描述那一刻？</li><li data-en="A few weeks later, what do both friends say, and what do their accounts of daily life show? Is he freer to choose when to ask? How has his friend been affected? What might change our initial judgment?" data-hant="幾週後再聽聽兩個人的說法，也看看生活紀錄。他更能自在地選擇何時求助了嗎？對朋友有什麼影響？哪些發現會讓我們改變原先的判斷？">几周后再听听两个人的说法，也看看生活记录。他更能自在地选择何时求助了吗？对朋友有什么影响？哪些发现会让我们改变原先的判断？</li></ul>
+      <div><p class="eyebrow" data-en="Research · An example question" data-hant="學術研究 · 研究問題示例">学术研究 · 研究问题示例</p><h2 id="research-title" data-en="Why can it feel easier to help a friend than to accept help yourself?" data-hant="為什麼我們願意幫助別人，卻不一定願意接受別人的幫助？">为什么我们愿意帮助别人，却不一定愿意接受别人的帮助？</h2></div>
+      <div class="case"><p class="case-lead" data-en="Imagine a student who’s always happy to lend a hand when a friend is in a bind. When he’s the one who needs a hand, though, he usually says, “It’s okay. I can manage.”" data-hant="想像有這樣一位同學，朋友遇到困難，他總是願意幫忙。可輪到自己遇到困難時，他卻習慣說：「沒事，我自己能解決。」">想象有这样一位同学，朋友遇到困难，他总是愿意帮忙。可轮到自己遇到困难时，他却习惯说：“没事，我自己能解决。”</p>
+        <p class="case-lead" data-hant="今天，他終於開口請朋友幫了個忙。事情解決了，可他心裡還是有些不自在：「其實，我是不是應該自己想辦法解決？」" data-en="Today he finally asks a friend for a favor. It works out, but afterward he still feels uneasy. “Should I have figured it out on my own?”">今天，他终于开口请朋友帮了个忙。事情解决了，可他心里还是有些不自在：“其实，我是不是应该自己想办法解决？”</p><p class="case-reflection" data-hant="朋友需要你的時候，你願意幫忙。輪到你需要朋友的時候，你也能坦然接受嗎？" data-en="When a friend needs you, you’re glad to help. How does it feel to let that friend help you when it’s your turn?">朋友需要你的时候，你愿意帮忙。轮到你需要朋友的时候，你也能坦然接受吗？</p><details class="case-details"><summary><span data-en="If asking for help left him uneasy, could it still be a step forward?" data-hant="開口求助後反而更不自在，這一步算是進步嗎？">开口求助后反而更不自在，这一步算是进步吗？</span><i class="plus" aria-hidden="true"></i></summary>
+          <ul><li data-en="When he says “I should handle it myself,” what matters most to him? Perhaps he values being the friend others turn to, worries about asking too much, or feels secure only when he can rely on himself. How would he put it?" data-hant="他說「我應該自己解決」時，心裡最在意的是什麼？也許他習慣了做被人需要的那一個，也許怕給朋友添負擔，也許覺得只有靠自己才安心。哪一種更接近他自己的說法？">他说“我应该自己解决”时，心里最在意的是什么？也许他习惯了做被人需要的那一个，也许怕给朋友添负担，也许觉得只有靠自己才安心。哪一种更接近他自己的说法？</li><li data-en="When does he think it’s worth working something out on his own? When might it be worth asking for help, and why? How did his friend understand what happened between them?" data-hant="對他來說，什麼時候自己試一試值得堅持，什麼時候開口求助也值得？他這樣判斷的理由是什麼？朋友當時又是怎麼理解這件事的？">对他来说，什么时候自己试一试值得坚持，什么时候开口求助也值得？他这样判断的理由是什么？朋友当时又是怎么理解这件事的？</li><li data-en="A few weeks later, what do both friends say, and what do their accounts of daily life show? Is he freer to choose when to ask? How has his friend been affected? What might change our initial judgment?" data-hant="幾週後再聽聽兩個人的說法，也看看生活紀錄。他更能自在地選擇何時求助了嗎？對朋友有什麼影響？哪些發現會讓我們改變原先的判斷？">几周后再听听两个人的说法，也看看生活记录。他更能自在地选择何时求助了吗？对朋友有什么影响？哪些发现会让我们改变原先的判断？</li></ul>
         </details>
       </div>
     </section>
 
     <section class="journal" id="resources" aria-labelledby="journal-title">
-      <div class="section wrap journal-grid">
-        <div><p class="eyebrow" data-en="Life Progress Book" data-hant="生命進程手冊">生命进程手册</p><h2 id="journal-title" data-en="Questions worth coming back to" data-hant="關於生命，值得我們認真想一想的事。">关于生命，值得我们认真想一想的事。</h2><ul class="core-questions">
-          <li>
-            <a href="#journal-form" data-write-prompt="core-for">
-              <span>
-                <span class="core-text" data-journal-question="core-for" data-hant="我正在為什麼而活？" data-en="What am I living for?">我正在为什么而活？</span>
-                <small lang="en" class="core-en zh-only" aria-hidden="true">What am I living for?</small>
-              </span>
-              <i class="arrow ne" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#journal-form" data-write-prompt="core-commitment">
-              <span>
-                <span class="core-text" data-journal-question="core-commitment" data-hant="什麼真正值得我投入？" data-en="What is truly worth my commitment?">什么真正值得我投入？</span>
-                <small lang="en" class="core-en zh-only" aria-hidden="true">What is truly worth my commitment?</small>
-              </span>
-              <i class="arrow ne" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#journal-form" data-write-prompt="core-becoming">
-              <span>
-                <span class="core-text" data-journal-question="core-becoming" data-hant="我正在成為怎樣的人？" data-en="Who am I becoming?">我正在成为怎样的人？</span>
-                <small lang="en" class="core-en zh-only" aria-hidden="true">Who am I becoming?</small>
-              </span>
-              <i class="arrow ne" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#journal-form" data-write-prompt="core-belief">
-              <span>
-                <span class="core-text" data-journal-question="core-belief" data-hant="我是否活出了自己所相信的？" data-en="Am I living out what I believe?">我是否活出了自己所相信的？</span>
-                <small lang="en" class="core-en zh-only" aria-hidden="true">Am I living out what I believe?</small>
-              </span>
-              <i class="arrow ne" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#journal-form" data-write-prompt="core-others">
-              <span>
-                <span class="core-text" data-journal-question="core-others" data-hant="我的生命能為別人帶來什麼？" data-en="What can my life contribute to others?">我的生命能为别人带来什么？</span>
-                <small lang="en" class="core-en zh-only" aria-hidden="true">What can my life contribute to others?</small>
-              </span>
-              <i class="arrow ne" aria-hidden="true"></i>
-            </a>
-          </li>
-        </ul></div>
-        <form class="journal-form" id="journal-form" tabindex="-1">
-          <h3 data-hant="留一頁給今天的自己" data-en="A page for today">留一页给今天的自己</h3><p class="journal-intro" data-en="Choose a question and write about one moment from your day. Your words stay on this page. Download a copy before you leave." data-hant="選一道提問，寫下一個真實片刻。文字只留在這個頁面，離開前可下載一份給自己。">选一道提问，写下一个真实片刻。文字只留在这个页面，离开前可下载一份给自己。</p><label for="prompt" data-en="Choose a reflection" data-hant="選擇反思主題">选择反思主题</label>
-          <select id="prompt">
-          <optgroup label="五个核心提问" data-group-hant="五個核心提問" data-group-en="Five core questions">
-            <option value="core-for" data-hant="我為何而活" data-en="What I live for">我为何而活</option>
-            <option value="core-commitment" data-hant="值得投入的事" data-en="What deserves my commitment">值得投入的事</option>
-            <option value="core-becoming" data-hant="我正在成為的人" data-en="Who I am becoming">我正在成为的人</option>
-            <option value="core-belief" data-hant="我活出的信念" data-en="Living out my beliefs">我活出的信念</option>
-            <option value="core-others" data-hant="我的生命與他人" data-en="What I can contribute">我的生命与他人</option>
-          </optgroup>
-          <optgroup label="八个生命提问" data-group-hant="八個生命提問" data-group-en="Eight life questions">
-            <option value="q0" data-hant="努力與有限性" data-en="Effort and limits">努力与有限性</option>
-            <option value="q1" data-hant="迷惘與方向" data-en="Finding direction">迷惘与方向</option>
-            <option value="q2" data-hant="成就與自我價值" data-en="Achievement and self-worth">成就与自我价值</option>
-            <option value="q3" data-hant="掌控與放手" data-en="Holding on and letting go">掌控与放手</option>
-            <option value="q4" data-hant="關係與內在改變" data-en="Change in relationships">关系与内在改变</option>
-            <option value="q5" data-hant="信念與實際生活" data-en="Beliefs in daily life">信念与实际生活</option>
-            <option value="q6" data-hant="獨立與同行" data-en="Independence and support">独立与同行</option>
-            <option value="q7" data-hant="生命的終極方向" data-en="What a life adds up to">生命的终极方向</option>
-          </optgroup>
-          <optgroup label="4T 反思" data-group-hant="4T 反思" data-group-en="4T reflections">
-            <option value="clarity" data-hant="生命覺察 · 我的選擇" data-en="Transparency · What guides me">生命觉察 · 我的选择</option>
-            <option value="change" data-hant="生命轉化 · 內在承諾" data-en="Transformation · Commitments">生命转化 · 内在承诺</option>
-            <option value="practice" data-hant="生命踐行 · 日常實踐" data-en="Transition · Daily practice">生命践行 · 日常实践</option>
-            <option value="company" data-hant="生命同行 · 彼此扶持" data-en="Togetherness · Mutual support">生命同行 · 彼此扶持</option>
-          </optgroup>
-        </select>
-          <label class="journal-question" id="journal-question" for="note">我正在为什么而活？</label>
+      <div class="section wrap journal-page">
+        <p class="eyebrow" data-en="Life Progress Book" data-hant="生命進程手冊">生命进程手册</p>
+        <h2 id="journal-title" data-hant="留一頁給今天的自己" data-en="A page for today">留一页给今天的自己</h2>
+        <p class="journal-intro" data-hant="寫下一個你還記得的片刻。文字只留在這一頁，離開前可以下載。" data-en="Write about one moment you remember. Your words stay on this page. Download a copy before you leave.">写下一个你还记得的片刻。文字只留在这一页，离开前可以下载。</p>
+        <form class="journal-form" id="journal-form" tabindex="-1" aria-labelledby="journal-title">
+          <label class="journal-question" id="journal-question" for="note">这星期，哪一刻让我觉得“我想这样生活”？</label>
           <textarea id="note" rows="4" placeholder="今天有一件事，让我发现……" data-placeholder-en="One moment today made me realize…" data-placeholder-hant="今天有一件事，讓我發現……"></textarea>
+          <details id="prompt-picker">
+            <summary><span data-hant="換一道題" data-en="Choose another question">换一道题</span><i class="plus" aria-hidden="true"></i></summary>
+            <details name="journal-topics" class="journal-topic"><summary><span data-hant="五個核心提問" data-en="Five core questions">五个核心提问</span><i class="plus" aria-hidden="true"></i></summary><div class="topic-choices"><button type="button" data-pick-prompt="core-for" aria-pressed="false" data-journal-question="core-for" data-hant="我正在為什麼而活？" data-en="What am I living for?">我正在为什么而活？</button>
+<button type="button" data-pick-prompt="core-commitment" aria-pressed="false" data-journal-question="core-commitment" data-hant="什麼真正值得我投入？" data-en="What is truly worth my commitment?">什么真正值得我投入？</button>
+<button type="button" data-pick-prompt="core-becoming" aria-pressed="false" data-journal-question="core-becoming" data-hant="我正在成為怎樣的人？" data-en="Who am I becoming?">我正在成为怎样的人？</button>
+<button type="button" data-pick-prompt="core-belief" aria-pressed="false" data-journal-question="core-belief" data-hant="我是否活出了自己所相信的？" data-en="Am I living out what I believe?">我是否活出了自己所相信的？</button>
+<button type="button" data-pick-prompt="core-others" aria-pressed="false" data-journal-question="core-others" data-hant="我的生命能為別人帶來什麼？" data-en="What can my life contribute to others?">我的生命能为别人带来什么？</button></div></details><details name="journal-topics" class="journal-topic"><summary><span data-hant="八個生命提問" data-en="Eight life questions">八个生命提问</span><i class="plus" aria-hidden="true"></i></summary><div class="topic-choices"><button type="button" data-pick-prompt="q0" aria-pressed="false" data-hant="你是不是總告訴自己，再撐一下就好了？" data-en="Do you keep telling yourself to hang in there a little longer?">你是不是总告诉自己，再撑一下就好了？</button>
+<button type="button" data-pick-prompt="q1" aria-pressed="false" data-hant="每天都很忙，但你知道自己在為什麼而忙嗎？" data-en="Your days are full. What are you making time for?">每天都很忙，但你知道自己在为什么而忙吗？</button>
+<button type="button" data-pick-prompt="q2" aria-pressed="false" data-hant="如果有一天，你不再那麼優秀呢？" data-en="What if one day you stopped being the high achiever?">如果有一天，你不再那么优秀呢？</button>
+<button type="button" data-pick-prompt="q3" aria-pressed="false" data-hant="你越想抓住的東西，有沒有反而讓你活得更累？" data-en="Is there something you’re exhausted from trying to control?">你越想抓住的东西，有没有反而让你活得更累？</button>
+<button type="button" data-pick-prompt="q4" aria-pressed="false" data-hant="如果身邊的人沒有改變，你還能有所改變嗎？" data-en="If the people around you carry on as usual, what could change for you?">如果身边的人没有改变，你还能有所改变吗？</button>
+<button type="button" data-pick-prompt="q5" aria-pressed="false" data-hant="你現在過的生活，是你真正相信的生活嗎？" data-en="Does the way you live reflect what you believe?">你现在过的生活，是你真正相信的生活吗？</button>
+<button type="button" data-pick-prompt="q6" aria-pressed="false" data-hant="一定要靠自己，才算是堅強嗎？" data-en="Does being strong mean doing everything on your own?">一定要靠自己，才算是坚强吗？</button>
+<button type="button" data-pick-prompt="q7" aria-pressed="false" data-hant="如果你實現了所有目標，然後呢？" data-en="If you reached every goal you’ve set, what then?">如果你实现了所有目标，然后呢？</button></div></details><details name="journal-topics" class="journal-topic"><summary><span data-hant="4T 反思" data-en="4T reflections">4T 反思</span><i class="plus" aria-hidden="true"></i></summary><div class="topic-choices"><button type="button" data-pick-prompt="clarity" aria-pressed="false" data-hant="生命覺察 · 我的選擇" data-en="Transparency · What guides me">生命觉察 · 我的选择</button>
+<button type="button" data-pick-prompt="change" aria-pressed="false" data-hant="生命轉化 · 內在承諾" data-en="Transformation · Commitments">生命转化 · 内在承诺</button>
+<button type="button" data-pick-prompt="practice" aria-pressed="false" data-hant="生命踐行 · 日常實踐" data-en="Transition · Daily practice">生命践行 · 日常实践</button>
+<button type="button" data-pick-prompt="company" aria-pressed="false" data-hant="生命同行 · 彼此扶持" data-en="Togetherness · Mutual support">生命同行 · 彼此扶持</button></div></details>
+          <button id="back-to-opening" class="text-link" type="button" data-pick-prompt="opening" hidden="" data-hant="回到本週的起筆題" data-en="Return to this week’s opening question">回到本周的起笔题</button></details>
           <div class="journal-bottom"><button class="pill dark-pill" type="submit"><span data-en="Download this page" data-hant="下載這一頁">下载这一页</span><i class="arrow down" aria-hidden="true"></i></button><span class="note-status" id="note-status" role="status"></span></div>
         </form>
       </div>
     </section>
     <section class="join wrap section" id="join" aria-labelledby="join-title">
       <div><p class="eyebrow" data-en="Life Conversations" data-hant="談心小組">谈心小组</p><h2 id="join-title" data-en="Begin with a conversation" data-hant="從一次談心開始">从一次谈心开始</h2><p class="closing-line" data-hant="即使走在不確定的人生中，我們仍可以探索值得走的方向。" data-en="Even when life is uncertain, we can still explore which paths are worth taking.">即使走在不确定的人生中，我们仍可以探索值得走的方向。</p></div>
-      <div class="join-copy"><p data-en="Share a meal or take a walk at lunchtime. Bring a question if you like, or simply listen. If a friend tells you about something difficult, you might ask, “What kind of support would you welcome?”" data-hant="午休時一起吃頓飯、走一段路。你可以帶一道提問來，也可以只是聽。若朋友說起一件辛苦的事，不妨問問：「你希望我怎麼陪你？」">午休时一起吃顿饭、走一段路。你可以带一道提问来，也可以只是听。若朋友说起一件辛苦的事，不妨问问：“你希望我怎么陪你？”</p><a class="text-link" href="#journal-form" id="conversation-prompt"><span data-en="Try a conversation prompt" data-hant="從一道同行提問聊起">从一道同行提问聊起</span><i class="arrow ne" aria-hidden="true"></i></a><p class="availability" data-en="These series offer a space for learning and reflection. Dates and registration details will appear here as plans take shape." data-hant="系列活動以教育與反思為主。課程規劃中，場次與報名時間待公布。">系列活动以教育与反思为主。课程规划中，场次与报名时间待公布。</p></div>
+      <div class="join-copy"><p data-en="Share a meal or take a walk at lunchtime. Bring a question if you like, or simply listen. If a friend tells you about something difficult, you might ask, “What kind of support would you welcome?”" data-hant="午休時一起吃頓飯、走一段路。你可以帶一道提問來，也可以只是聽。若朋友說起一件辛苦的事，不妨問問：「你希望我怎麼陪你？」">午休时一起吃顿饭、走一段路。你可以带一道提问来，也可以只是听。若朋友说起一件辛苦的事，不妨问问：“你希望我怎么陪你？”</p><details id="conversation-prompt" class="conversation-card"><summary class="text-link"><span data-hant="從一道同行提問聊起" data-en="Try a conversation prompt">从一道同行提问聊起</span><i class="arrow ne" aria-hidden="true"></i></summary><p data-hant="兩個人輪流聊聊。" data-en="Take turns sharing.">两个人轮流聊聊。</p><p data-hant="「最近有沒有哪個時刻，讓你對自己的未來感到不安？比如懷疑自己選錯了科系，擔心跟不上別人的腳步，或者不知道現在的努力以後還有沒有用。」" data-en="“Was there a moment recently when you felt unsure about your future? Maybe you wondered whether you’d chosen the right major, worried about keeping up, or wondered if the work you’re doing now will matter later.”">“最近有没有哪个时刻，让你对自己的未来感到不安？比如怀疑自己选错了专业，担心跟不上别人的脚步，或者不知道现在的努力以后还有没有用。”</p><p data-hant="聽的人可以接著問：「那時候，你最擔心的是什麼？」" data-en="If you’re listening, you might ask, “What worried you most at the time?”">听的人可以接着问：“那时候，你最担心的是什么？”</p><p data-hant="如果對方願意，還可以繼續問：「這種擔心有沒有影響你現在的生活？」" data-en="If your friend would like to say more, you could ask, “Has that worry affected your day-to-day life?”">如果对方愿意，还可以继续问：“这种担心有没有影响你现在的生活？”</p><p data-hant="不急著給建議，也不需要幫對方找到答案。試著聽懂對方真正擔心的是什麼。" data-en="Give your friend time. You don’t need to offer advice or find an answer. Listen for what’s really worrying them.">不急着给建议，也不需要帮对方找到答案。试着听懂对方真正担心的是什么。</p></details><p class="availability" data-en="The series are being planned. Dates and registration details will be posted here." data-hant="課程規劃中，場次與報名時間待公布。">课程规划中，场次与报名时间待公布。</p></div>
     </section>
   </main>
   <footer><div class="wrap footer-inner"><a class="brand" href="#top" aria-label="Life Progress Center 首页" data-label-en="Life Progress Center home" data-label-hant="Life Progress Center 首頁"><span class="monogram" aria-hidden="true">LPC</span><span class="wordmark"><span lang="en">Life Progress Center</span><span lang="zh-CN" data-en="生命进程中心" data-brand-zh="" data-hant="生命進程中心">生命进程中心</span></span></a><a class="back-top" href="#top"><span data-en="Back to top" data-hant="回到頁首">返回顶部</span><i class="arrow up" aria-hidden="true"></i></a></div></footer>
@@ -1494,7 +1460,7 @@ License: GPL-3+
 const $ = (id) => document.getElementById(id);
 const programDialog = $('program-dialog');
 const languageSelect = $('language');
-const journalPrompt = $('prompt');
+const promptPicker = $('prompt-picker');
 const journalNote = $('note');
 const menuButton = $('menu-toggle');
 const header = $('masthead');
@@ -1537,6 +1503,7 @@ const programs = {
   }
 };
 const prompts = {
+  opening: ["这星期，哪一刻让我觉得“我想这样生活”？", "這星期，哪一刻讓我覺得「我想這樣生活」？", "Was there a moment this week when I thought, “This is how I want to live”?"],
   clarity: ["我说自己重视什么？今天的一次选择透露了什么？", "我說自己重視什麼？今天的一次選擇透露了什麼？", "What do I say I value? What did one choice today reveal?"],
   change: ["哪一个信念正在成为我愿意持守的承诺？我在哪个片刻察觉了这份改变？", "哪一個信念正在成為我願意持守的承諾？我在哪個片刻察覺了這份改變？", "Which belief is becoming a commitment I can inhabit? When did I notice that change?"],
   practice: ["换了一个处境，我如何在现实限制中活出所信？", "換了一個處境，我如何在現實限制中活出所信？", "In a different situation, how did I live out a commitment under real constraints?"],
@@ -1672,7 +1639,7 @@ const slides = [
 let language = 'zh-CN';
 let slideIndex = 0;
 let activeProgram = null;
-let promptId = journalPrompt.value;
+let promptId = 'opening';
 let noteState = '';
 const formIndex = {'zh-CN': 0, 'zh-TW': 1, en: 2};
 const localized = (forms) => forms[formIndex[language]];
@@ -1848,13 +1815,23 @@ function updateNoteStatus() {
 function changePrompt(next) {
   drafts.set(promptId, journalNote.value);
   promptId = next;
-  journalPrompt.value = next;
+  promptPicker.open = false;
+  $('back-to-opening').hidden = next === 'opening';
+  promptPicker.querySelectorAll('.journal-topic[open]').forEach((group) => { group.open = false; });
+  promptPicker.querySelectorAll('[data-pick-prompt]').forEach((button) => {
+    button.setAttribute('aria-pressed', String(button.dataset.pickPrompt === next));
+  });
   journalNote.value = drafts.get(next) || '';
   $('journal-question').textContent = localized(prompts[next]);
   noteState = '';
   updateNoteStatus();
 }
-journalPrompt.addEventListener('change', () => changePrompt(journalPrompt.value));
+promptPicker.addEventListener('click', (event) => {
+  const button = event.target.closest('button[data-pick-prompt]');
+  if (!button) return;
+  changePrompt(button.dataset.pickPrompt);
+  journalNote.focus();
+});
 document.querySelectorAll('[data-write-prompt]').forEach((link) => {
   link.addEventListener('click', (event) => {
     if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
@@ -1862,7 +1839,6 @@ document.querySelectorAll('[data-write-prompt]').forEach((link) => {
     $('journal-form').focus({preventScroll: true});
   });
 });
-$('conversation-prompt').addEventListener('click', () => changePrompt('company'));
 journalNote.addEventListener('input', () => { noteState = ''; updateNoteStatus(); });
 $('journal-form').addEventListener('submit', (event) => {
   event.preventDefault();
